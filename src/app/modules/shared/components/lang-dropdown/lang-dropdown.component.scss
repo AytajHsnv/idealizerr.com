@@ -1,0 +1,18 @@
+@import 'src/assets/scss/abstracts/variables';
+
+select.language {
+    font-family: "i_bold";
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    color: $brand7;
+    border: 3px solid $brand7;
+    height: 40px;
+    /* padding: 0px 21px; */
+    width: 40px;
+    text-align: center;
+    padding: 0px 5px;
+    -webkit-appearance: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+<div class="whitebox">
+  <h4 class="h4 i-semi-bold grey pb-40px">{{"global.mobilephone" | translate}}</h4>
+
+
+  <div>
+    <div class="holder"
+         *ngIf="user">
+      <ngx-ea-intl-tel-input label="{{'global.mobilephone' | translate}}"
+                             [value]="user.user_phone ? user.user_phone : null"
+                             [hideCountriesDialCodeList]="[]"
+                             [placeholder]="'global.yournumber' | translate"
+                             [searchPlaceholder]="'home.search' | translate"
+                             (value)="mobileNumberInputChange($event)"></ngx-ea-intl-tel-input>
+    </div>
+  </div>
+
+  <a (click)="submitForm()"
+     *ngIf="form_value_changed"
+     class="dashboard-form-submit-btn">{{"global.refresh" | translate}}</a>
+
+</div>

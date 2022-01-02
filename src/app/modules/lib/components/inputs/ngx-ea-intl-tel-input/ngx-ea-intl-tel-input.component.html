@@ -1,0 +1,74 @@
+<div>
+    <label for="phone_number"
+           *ngIf="label">{{label}}</label>
+    <div class="ngx-ea-intl-tel-input-holder"
+         [ngClass]="{'disabled': disabled}"
+         (clickOutside)="closeDropdown($event)">
+        <div class="ngx-ea-head">
+            <div *ngIf="!formVersion"
+                 class="country"
+                 (click)="toggleDropdown()">
+                <img class="selected-country-flag"
+                     src="https://www.countryflags.io/{{selected.code}}/flat/64.png">
+                <small>{{selected.dial_code}}</small>
+                <span class="mdi mdi-menu-down"></span>
+            </div>
+            <div *ngIf="formVersion"
+                 class="country"
+                 (click)="toggleDropdown()"
+                 style="width: 100%">
+                <ng-container *ngIf="selected">
+                    <img class="selected-country-flag"
+                         src="https://www.countryflags.io/{{selected.country_code}}/flat/64.png">
+                    <small style="width: 100%;">{{selected.country_name}}</small>
+                </ng-container>
+                <ng-container *ngIf="!selected">
+                    <small style="width: 100%;">{{choose}}</small>
+                </ng-container>
+                <i class="mdi mdi-menu-down"></i>
+            </div>
+            <div class="ngx-ea-input"
+                 *ngIf="!formVersion">
+                <input type="number"
+                       [(ngModel)]="phone_number"
+                       (input)="numberInputChange()"
+                       (keypress)="preventE($event)"
+                       placeholder="{{placeholder}}"
+                       name="phone_number"
+                       id="phone_number">
+            </div>
+        </div>
+        <div class="ngx-ea-body"
+             [ngClass]="{'active': show_options}">
+            <div class="search-input">
+                <input type="text"
+                       [(ngModel)]="search_key"
+                       (input)="search()"
+                       placeholder="{{search_placeholder}}"
+                       name="search_key"
+                       id="search_key">
+            </div>
+
+            <div class="list">
+                <ul *ngIf="!formVersion">
+                    <li *ngFor="let item of search_result_list"
+                        (click)="select(item)">
+                        <img class="country-flag"
+                             src="https://www.countryflags.io/{{item.code}}/flat/64.png">
+                        <p>{{item.name}}</p>
+                    </li>
+                </ul>
+                <ul *ngIf="formVersion">
+                    <li *ngFor="let item of search_result_list"
+                        (click)="select(item)">
+                        <img class="country-flag"
+                             src="https://www.countryflags.io/{{item.country_code}}/flat/64.png">
+                        <p>{{item.country_name}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+</div>

@@ -1,0 +1,17 @@
+<section class="core-about-team">
+  <h1 class="h1 i-semi-bold pb-24px text-center">{{"home.team" | translate}}</h1>
+  <div>
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-12"
+           *ngFor="let item of team">
+        <div class="team-member">
+          <div class="image">
+            <img src="{{item.teams_logo}}">
+          </div>
+          <h4 class="h4 i-semi-bold pt-16px text-center">{{item.teams_title}}</h4>
+          <p class="p i-light lh-20px pt-16px text-center">{{item.teams_description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

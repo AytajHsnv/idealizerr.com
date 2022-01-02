@@ -1,0 +1,17 @@
+<div class="wrapper">
+
+  <div class="row"
+       *ngIf="startups && startups.length">
+    <div class="col-md-4 col-12"
+         *ngFor="let item of startups |slice:0:9">
+      <div class="startup-holder pb-32px">
+        <startup-card-home [startup]=item
+                           (followed)="getStartups()">
+        </startup-card-home>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="startups && !startups.length">
+    <h5 class="h3 i-semi-bold pt-40px">{{"home.empty" | translate}}</h5>
+  </div>
+</div>

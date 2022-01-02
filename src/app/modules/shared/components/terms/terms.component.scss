@@ -1,0 +1,41 @@
+@import 'src/assets/scss/abstracts/variables';
+section{
+
+
+    &.modal{
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 40px 20%;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        overflow-x: scroll;
+        .holder{
+            border-radius: $br8;
+            background-color: $white;
+            padding: 20px;
+            min-height: 100%;
+            .wrapper{
+                width: 100%;
+                ul.buttons{
+                    margin-right: -8px;
+                    margin-left: -8px;
+                    li{
+                        padding-right: 8px;
+                        padding-left: 8px;
+                    }
+                }
+            }
+        }
+    }
+
+    &.inline{
+        padding-top: 48px;
+        ul.buttons{
+            display: none;
+        }
+    }
+
+}

@@ -1,0 +1,14 @@
+<section *ngIf="item">
+  <div class="wrapper">
+    <div class="head pb-40px">
+      <div class="image">
+        <img [src]="item.image">
+      </div>
+      <h1 class="pl-24px h1 i-medium">{{item.title}}</h1>
+    </div>
+    <div class="safehtml">
+      <div [innerHTML]="item.description | safehtml"></div>
+    </div>
+
+  </div>
+</section>

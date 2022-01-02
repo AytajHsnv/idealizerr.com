@@ -1,0 +1,44 @@
+<section class="core-competition-page">
+
+  <div class="cover-image-holder">
+      <img *ngIf="cover_image" [src]="cover_image">
+  </div>
+
+  <div class="page-inside-navigation-holder">
+    <div class="wrapper">
+      <page-inside-navigation [sections]="navigation_sections"></page-inside-navigation>
+    </div>
+  </div>
+
+  <div class="core-competition-about-section-holder section-space" scroll-id="about">
+    <div class="wrapper">
+      <core-competition-about-section [about]="about"></core-competition-about-section>
+    </div>
+  </div>
+
+  <div class="core-competition-rules-section-holder section-space bg-brand0" scroll-id="rules">
+    <div class="wrapper">
+      <core-competition-rules-section [rules]="rules"></core-competition-rules-section>
+    </div>
+  </div>
+
+  <div class="core-competition-plans-section-holder section-space" scroll-id="plans">
+    <div class="wrapper">
+      <core-competition-plans-section [plans]="plans"></core-competition-plans-section>
+    </div>
+  </div>
+
+  <div class="core-competition-jury-section-holder section-space bg-brand0" scroll-id="jury">
+    <div class="wrapper">
+      <core-competition-jury-section></core-competition-jury-section>
+    </div>
+  </div>
+
+  <!-- <div class="core-competition-participants-section-holder section-space">
+    <div class="wrapper">
+      <core-competition-participants-section></core-competition-participants-section>
+    </div>
+  </div> -->
+
+
+</section>

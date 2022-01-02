@@ -1,0 +1,24 @@
+<div class="footer-social">
+  <div *ngIf="settings && settings.contact">
+    <h4 class="label grey i-semi-bold">{{"home.connection" | translate}}</h4>
+
+    <div *ngIf="settings.contact.email"
+         class="display-flex align-items-center pt-16px">
+      <i class="mdi mdi-email fs-24px brand7"></i>
+      <p class="p i-regular pl-8px">info@idealizerr.com</p>
+    </div>
+
+    <!-- <div *ngIf="settings.contact.phone"
+         class="display-flex align-items-center pt-16px">
+      <i class="mdi mdi-phone fs-24px brand7"></i>
+      <p class="p i-regular pl-8px">+99412 310 14 00</p>
+    </div> -->
+
+    <!-- <div *ngIf="settings.contact.address"
+         class="display-flex align-items-center pt-16px">
+      <i class="mdi mdi-map-marker fs-24px brand7"></i>
+      <p class="p i-regular pl-8px">Mikayıl Müşfiq 2H,blok 2, 5-ci mərtəbə</p>
+    </div> -->
+  </div>
+
+</div>

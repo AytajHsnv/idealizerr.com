@@ -1,0 +1,127 @@
+@import '../abstracts/variables';
+
+.btn{
+    border-radius: $br8;
+    height: 40px;
+    border: 3px solid $brand3;
+    line-height: 34px;
+    box-sizing: border-box;
+    min-width: 120px;
+    text-align: center;
+    transition: $transition-2;
+    color: $brand3;
+    font-family: $i-semi-bold;
+    font-size: $p;
+    &.icon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        small,i{
+            color: $brand3;
+            font-size: $p;
+        }
+        small{
+            padding: 0px 8px;
+        }
+    }
+
+    &:hover{
+        box-shadow: $box-shadow-3;
+        transform: scale(1.01);
+    }
+    &.btn-brand{
+        background-color: $brand3;
+        color: $white;
+    }
+    &.btn-success{
+        background-color: $success;
+        border-color: $success;
+        color: $white;
+    }
+    &.btn-danger{
+        background-color: $danger;
+        border-color: $danger;
+        color: $white;
+    }
+    &.btn-white{
+        background-color: $white;
+        color: $black;
+        border-color: $brand0;
+        small,i{
+            color: $black;
+        }
+    }
+    &.btn-brand0{
+        background-color: $brand0;
+        color: $brand7;
+        border-color: $brand0;
+        small,i{
+            color: $brand7;
+        }
+    }
+    &.btn-brand7{
+        border-color: $brand7;
+        background-color: $brand7;
+        color: $white;
+    }
+
+    &.non-border{
+        border: none;
+        line-height: 40px;
+    }
+    &.btn-grey{
+        background-color: $input;
+        border-color: $input;
+        color: $brand7;
+        small,i{
+            color: $input;
+        }
+    }
+
+    &.grey{
+        background-color: $input;
+        border-color: $brand0;
+        small,i{
+            color: $black;
+        }
+    }
+    &.w-auto{
+        padding: 0px 16px;
+        display: inline-block;
+    }
+    &.w-120px{
+        width: 120px;
+    }
+    &[disabled]{
+        cursor: not-allowed;
+    }
+
+    &.btn-brand7.outline{
+        border: 3px solid $brand7;
+        color: $brand7;
+        i,small{color: $brand7;}
+        background-color: $transparent;
+    }
+
+}
+.dashboard-form-submit-btn:disabled {
+    opacity: .5;
+    cursor: default;
+}
+.dashboard-form-submit-btn{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    color: $white;
+    border: none;
+    box-shadow: none;
+    font-family: $i-semi-bold;
+    font-size: $p;
+    background-color: $brand7;
+    text-align: center;
+    line-height: 40px;
+}

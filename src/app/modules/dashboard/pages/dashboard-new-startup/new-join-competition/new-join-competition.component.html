@@ -1,0 +1,12 @@
+<div class="box">
+  <div
+  *ngIf="detail && detail.canjoincompetition">
+<button class="btn btn-success"
+       style="width: 100%"
+       *ngIf="!detail.joined"
+       (click)="joinCompetition()">{{"dashboard.join-competition" | translate}}</button>
+</div>
+<div>
+<button *ngIf="detail && detail.joined" style="width: 100%" class="btn btn-secondary">{{"dashboard.joined-competition" | translate}}</button>
+</div>
+</div>

@@ -1,0 +1,43 @@
+<form [formGroup]='form'
+      autocomplete='on'
+      validate
+      (keyup.enter)='submitForm()'
+      class="pb-24px">
+
+  <!-- COMMENT ================================================================================ -->
+  <div class="subscribe-email input-holder">
+    <label for="subscribe_email">{{"home.subscribe" | translate}}</label>
+    <div class="input brand7 right-icon">
+      <input type='email'
+             name='email'
+             placeholder='excample@email.com'
+             formControlName='email'
+             id='subscribe_email'>
+      <i class="mdi mdi-send"
+         (click)="submitForm()"
+         *ngIf="form.valid"></i>
+    </div>
+    <ul>
+      <li *ngIf="form.controls['email'].hasError('email') && form.controls['email'].touched">
+        {{"global.correct-email" | translate}}</li>
+      <li *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">
+        {{"global.requiredField" | translate}}</li>
+    </ul>
+  </div>
+  <!-- ================================================================================ COMMENT -->
+
+</form>
+
+<div>
+  <ul class="contact"
+      *ngIf="settings && settings.social && settings.contact">
+    <li *ngIf="settings.social.facebook"> <a [href]="settings.social.facebook" target="_blank"> <i class="mdi mdi-facebook"></i> </a>
+    </li>
+    <li *ngIf="settings.social.linkedin"> <a [href]="settings.social.linkedin" target="_blank"> <i class="mdi mdi-linkedin"></i> </a>
+    </li>
+    <li> <a href="https://t.me/idealizerr" target="_blank"> <img src="/assets/images/telegram.svg" style="width: 22px; height: 22spx;" alt=""> </a>
+    </li>
+    <li *ngIf="settings.social.instagram"> <a [href]="settings.social.instagram" target="_blank"> <i class="mdi mdi-instagram"></i> </a>
+    </li>
+  </ul>
+</div>

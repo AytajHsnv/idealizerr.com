@@ -1,0 +1,14 @@
+<section class="core-about-sponsors-slider-section">
+  <h1 class="h1 i-semi-bold pb-24px text-center">{{"home.sponsors" | translate}}</h1>
+
+  <div class="core-about-sponsors-slider row">
+    <!-- SLIDER ITEM -->
+    <div class="slider-item col"
+         *ngFor="let item of sponsors">
+      <div class="image">
+        <img src="{{item.file}}">
+      </div>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "1",
+    "name": "Skinny Tonic",
+    "image": "/assets/images/trash/supp_1.png",
+    "cover_image": "/assets/images/trash/supc_1.jpg",
+    "desctiption": "SKINNY TONIC™️ ‘The Natural Slimline' ZERO Calories ZERO Sugar NOTHING Artificial",
+    "country": {
+      "code": "gb",
+      "name": "United Kingdom"
+    },
+    "jury_vote": 2,
+    "startup_vote": 6,
+    "rank": 24
+  },
+  {
+    "id": "2",
+    "name": "Radbot",
+    "image": "/assets/images/trash/supp_2.png",
+    "cover_image": "/assets/images/trash/supc_2.png",
+    "desctiption": "We are a clean tech company whose first product, Radbot, reduces energy consumption & saves people money.",
+    "country": {
+      "code": "be",
+      "name": "Germany"
+    },
+    "jury_vote": 7,
+    "startup_vote": 16,
+    "rank": 16
+  },
+  {
+    "id": "3",
+    "name": "Q Doctor",
+    "image": "/assets/images/trash/supp_3.png",
+    "cover_image": "/assets/images/trash/supc_3.png",
+    "desctiption": "Q doctor aims to revolutionise NHS care delivery using video consulting to benefit patients & clinicians",
+    "country": {
+      "code": "UA",
+      "name": "Ukraine"
+    },
+    "jury_vote": 2,
+    "startup_vote": 8,
+    "rank": 24
+  },
+  {
+    "id": "4",
+    "name": "Breca Swimrun",
+    "image": "/assets/images/trash/supp_4.png",
+    "cover_image": "/assets/images/trash/supc_4.png",
+    "desctiption": "Endurance pioneers on a mission to build a global brand and improve the way we consume sport.",
+    "country": {
+      "code": "ES",
+      "name": "Spain"
+    },
+    "jury_vote": 4,
+    "startup_vote": 11,
+    "rank": 23
+  },
+  {
+    "id": "5",
+    "name": "Track",
+    "image": "/assets/images/trash/supp_5.png",
+    "cover_image": "/assets/images/trash/supc_5.png",
+    "desctiption": "The property and money manager designed for homeowners - backed by Pi Labse",
+    "country": {
+      "code": "be",
+      "name": "Germany"
+    },
+    "jury_vote": 4,
+    "startup_vote": 17,
+    "rank": 28
+  },
+  {
+    "id": "6",
+    "name": "Found",
+    "image": "/assets/images/trash/startup1_logo.png",
+    "cover_image": "/assets/images/trash/startup1.png",
+    "desctiption": "Creating the community that protects through awesome AI technology and in-app insurance",
+    "country": {
+      "code": "be",
+      "name": "Germany"
+    },
+    "jury_vote": 7,
+    "startup_vote": 12,
+    "rank": 21
+  },
+  {
+    "id": "1",
+    "name": "Skinny Tonic",
+    "image": "/assets/images/trash/supp_1.png",
+    "cover_image": "/assets/images/trash/supc_1.jpg",
+    "desctiption": "SKINNY TONIC™️ ‘The Natural Slimline' ZERO Calories ZERO Sugar NOTHING Artificial",
+    "country": {
+      "code": "gb",
+      "name": "United Kingdom"
+    },
+    "jury_vote": 2,
+    "startup_vote": 6,
+    "rank": 24
+  },
+  {
+    "id": "2",
+    "name": "Radbot",
+    "image": "/assets/images/trash/supp_2.png",
+    "cover_image": "/assets/images/trash/supc_2.png",
+    "desctiption": "We are a clean tech company whose first product, Radbot, reduces energy consumption & saves people money.",
+    "country": {
+      "code": "be",
+      "name": "Germany"
+    },
+    "jury_vote": 7,
+    "startup_vote": 16,
+    "rank": 16
+  },
+  {
+    "id": "3",
+    "name": "Q Doctor",
+    "image": "/assets/images/trash/supp_3.png",
+    "cover_image": "/assets/images/trash/supc_3.png",
+    "desctiption": "Q doctor aims to revolutionise NHS care delivery using video consulting to benefit patients & clinicians",
+    "country": {
+      "code": "UA",
+      "name": "Ukraine"
+    },
+    "jury_vote": 2,
+    "startup_vote": 8,
+    "rank": 24
+  }
+]

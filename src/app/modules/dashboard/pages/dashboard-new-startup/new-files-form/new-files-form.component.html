@@ -1,0 +1,38 @@
+<div class="little-warning i-medium">{{"dashboard.required-files" | translate}}</div>
+<div class="box">
+        <input type="file"
+               #files
+               style="display: none"
+               (change)="uploadFiles($event.target.files)"
+               multiple>
+        <ul>
+                <li *ngFor="let item of uploaded"
+                    class="i-regular mt-1">{{item.name}} <span class="mdi mdi-delete danger"
+                              style="cursor: pointer;"
+                              (click)="deleteFile(item)"></span></li>
+        </ul>
+        <button class="btn i-bold w-auto non-border mt-1"
+                style="background-color: rgb(5, 71, 180);
+  color: rgb(255, 255, 255); width:100%;"
+                (click)="addFiles(files)">{{"dashboard.choose-files" | translate}}</button>
+        <button class="btn i-bold w-auto non-border mt-3"
+                *ngIf="uploaded && uploaded.length"
+                style="background-color: rgb(5, 180, 98);
+  color: rgb(255, 255, 255); width:100%;"
+                (click)="submitFiles()">{{"dashboard.submit-files" | translate}}</button>
+        <h2 class="i-medium mt-2">{{"dashboard.available-files" | translate}}</h2>
+        <ul class="mt-2">
+                <li class="i-regular"
+                    style="font-size: 12px;"
+                    *ngIf="detail.files.length === 0">{{"dashboard.no-file" | translate}}</li>
+                <li *ngFor="let item of detail.files"
+                    class="mb-2">
+                        <a class="p i-regular grey link-hover"
+                           [href]="item.file"
+                           download>{{item.title || 'File'}}
+                        </a>
+                        <i class="mdi mdi-delete danger"
+                           (click)="removeFile(item)"></i>
+                </li>
+        </ul>
+</div>

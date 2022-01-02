@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "image": "/assets/images/trash/event.jpg",
+    "title": "Test",
+    "date": "15 hour ago"
+  },
+  {
+    "id": "2",
+    "image": "/assets/images/trash/event.jpg",
+    "title": "Test",
+    "date": "15 hour ago"
+  },
+  {
+    "id": "3",
+    "image": "/assets/images/trash/event.jpg",
+    "title": "Test",
+    "date": "15 hour ago"
+  }
+]

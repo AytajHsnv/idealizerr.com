@@ -1,0 +1,92 @@
+<section>
+    <div class="wrapper">
+        <div class="row">
+            <div class="section-names-container">
+                <div class="section-names">
+                    <a (click)="changeSection('form', !sections.form.active && sections.new)"
+                       [ngClass]="{
+                           'active': sections.form.active,
+                           'disabled': !sections.form.active && sections.new
+                       }">{{"global.signup" | translate}}</a>
+                    <a (click)="changeSection('video', !sections.video.active && sections.new)"
+                       [ngClass]="{
+                           'active': sections.video.active,
+                           'disabled': !sections.video.active && sections.new,
+                           'menu-pulse': !sections.new && !accepted
+                       }">{{"dashboard.video" | translate}}</a>
+                    <a (click)="changeSection('files', !sections.files.active && sections.new)"
+                       [ngClass]="{
+                           'active': sections.files.active,
+                           'disabled': !sections.files.active && sections.new
+                       }">{{"dashboard.files" | translate}}</a>
+                    <a class="success-link" (click)="changeSection('program', !sections.program.active && sections.new)"
+                       [ngClass]="{
+                           'active': sections.program.active,
+                           'disabled': !sections.program.active && sections.new,
+                           'menu-pulse': !sections.new
+                       }">{{"dashboard.programs" | translate}}</a>
+                       <a (click)="changeSection('confirmation', !sections.confirmation.active && sections.new)"
+                       *ngIf="canjoincompetition"
+                       class="danger-link"
+                          [ngClass]="{
+                              'active': sections.confirmation.active,
+                              'disabled': (!sections.confirmation.active && sections.new) || (startupDetail && startupDetail.startup.joined),
+                              'menu-pulse': !sections.new && !(startupDetail && startupDetail.startup.joined)
+                          }">{{"dashboard.join-competition" | translate}}</a>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div [ngClass]="{'display-none': !sections.form.active}">
+                    <ng-container *ngIf="sections.new && !startupDetail">
+                        <new-question-form (startupNameChange)="startupNameChange($event)"
+                                           [new]="true"></new-question-form>
+                    </ng-container>
+                    <ng-container *ngIf="sections.new && startupDetail">
+                        <new-question-form (startupNameChange)="startupNameChange($event)"
+                                            [detail]="startupDetail"
+                                           [new]="true"></new-question-form>
+                    </ng-container>
+                    <ng-container *ngIf="!sections.new && startupDetail">
+                        <new-question-form (startupNameChange)="startupNameChange($event)"
+                                           [new]="sections.new"
+                                           [detail]="startupDetail"></new-question-form>
+                    </ng-container>
+                </div>
+                <ng-container *ngIf="startupDetail">
+                    <div [ngClass]="{'display-none': !sections.video.active}">
+                        <app-new-video-form [startupId]="startupDetail.startup.id"
+                                            [detail]="startupDetail">
+                        </app-new-video-form>
+                    </div>
+                    <div [ngClass]="{'display-none': !sections.files.active}">
+                        <app-new-files-form [startupId]="startupDetail.startup.id"
+                                            [detail]="startupDetail"></app-new-files-form>
+                    </div>
+                    <div [ngClass]="{'display-none': !sections.program.active}">
+                        <app-new-program [startupId]="startupDetail.startup.id"></app-new-program>
+                    </div>
+                    <div [ngClass]="{'display-none': !sections.confirmation.active}">
+                        <new-join-competition (joined)="joinedCompetition($event)" [detail]="startupDetail.startup"></new-join-competition>
+                    </div>
+                </ng-container>
+            </div>
+            <div class="col-md-4 col-12 force-order">
+                <div class="preview"
+                     *ngIf="sections.new">
+                    <startup-card-form *ngIf="startup_show"
+                                       [class]="'bg-white'"
+                                       [new]="sections.new"
+                                       [startup]=startup_show></startup-card-form>
+                </div>
+                <div class="preview"
+                     *ngIf="!sections.new && startupDetail">
+                    <startup-card-form *ngIf="startup_show"
+                                       [class]="'bg-white'"
+                                       [new]="sections.new"
+                                       [detail]="startupDetail.startup"
+                                       [startup]=startup_show></startup-card-form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

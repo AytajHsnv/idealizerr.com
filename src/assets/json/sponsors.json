@@ -1,0 +1,26 @@
+[
+    {
+        "id":"1",
+        "name":"Aydın Süleymanov",
+        "about":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, totam. Ex, ratione velit! Obcaecati deleniti, excep. Quos, totam. Ex, ratione velit! Obcaecati deleniti, excep",
+        "image":"/assets/images/trash/sponsor1.svg"
+    },
+    {
+        "id":"2",
+        "name":"Aydın Süleymanov",
+        "about":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, totam. Ex, ratione velit! Obcaecati deleniti, excep. Quos, totam. Ex, ratione velit! Obcaecati deleniti, excep",
+        "image":"/assets/images/trash/sponsor2.svg"
+    },
+    {
+        "id":"3",
+        "name":"Aydın Süleymanov",
+        "about":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, totam. Ex, ratione velit! Obcaecati deleniti, excep. Quos, totam. Ex, ratione velit! Obcaecati deleniti, excep",
+        "image":"/assets/images/trash/sponsor3.svg"
+    },
+    {
+        "id":"4",
+        "name":"Aydın Süleymanov",
+        "about":"Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos, totam. Ex, ratione velit! Obcaecati deleniti, excep. Quos, totam. Ex, ratione velit! Obcaecati deleniti, excep",
+        "image":"/assets/images/trash/sponsor4.svg"
+    }
+]

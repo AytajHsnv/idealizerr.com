@@ -1,0 +1,29 @@
+<section>
+    <div class="wrapper">
+
+        <!-- COMMENT ================================================================================ -->
+        <div>
+            <div class="row">
+                <div class="col-md-4 col-12">
+                    <div class="pb-32px">
+                        <a [routerLink]="['/dashboard/new/startup']"
+                           style="display: block;">
+                            <add-startup-card></add-startup-card>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-12"
+                     *ngFor="let item of startups">
+                    <div class="pb-32px"
+                         style="height: 100%">
+                        <startup-card [class]="'bg-white'"
+                                      [startup]="item"></startup-card>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ================================================================================ COMMENT -->
+
+
+    </div>
+</section>

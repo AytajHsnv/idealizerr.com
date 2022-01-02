@@ -1,0 +1,66 @@
+[
+  {
+    "title": "Mentavio",
+    "description": "Mental health marketplace offering psychologist consultations and location-independent counselling",
+    "text_color":"white",
+    "button": {
+      "text": "View",
+      "color": "black",
+      "background_color": "white",
+      "url": "/"
+    },
+    "layout": {
+      "image": "/assets/images/trash/cover_1.png",
+      "front_circle_color": "#8ec746",
+      "back_circle_color": "#ebebeb"
+    }
+  },
+  {
+    "title": "Thread Tales",
+    "description": "Luxury, sustainable scarves, travel wraps, blankets and kaftans. Unique design, hand-woven by Artisans.",
+    "text_color":"white",
+    "button": {
+      "text": "Detail",
+      "color": "black",
+      "background_color": "white",
+      "url": "/"
+    },
+    "layout": {
+      "image": "/assets/images/trash/cover_2.png",
+      "front_circle_color": "",
+      "back_circle_color": ""
+    }
+  },
+  {
+    "title": "Yodomo",
+    "description": "The marketplace for making. Seeking further investment to expand our corporate wellbeing offer.",
+    "text_color":"white",
+    "button": {
+      "text": "Subscribe",
+      "color": "black",
+      "background_color": "white",
+      "url": "/"
+    },
+    "layout": {
+      "image": "/assets/images/trash/cover_3.png",
+      "front_circle_color": "#b6eec7",
+      "back_circle_color": "#944f3f"
+    }
+  },
+  {
+    "title": "Lorem ipsum dolor sit amet consectetur",
+    "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, animi esse quaerat accusamus ex quidem, perspiciatis, voluptatibus sed ad et fuga distinctio consequatur soluta sit tenetur nostrum velit eum doloremque.",
+    "text_color":"white",
+    "button": {
+      "text": "View",
+      "color": "black",
+      "background_color": "white",
+      "url": "/"
+    },
+    "layout": {
+      "image": "/assets/images/trash/preview.png",
+      "front_circle_color": "",
+      "back_circle_color": ""
+    }
+  }
+]

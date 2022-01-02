@@ -1,0 +1,38 @@
+.wrapper {
+    width: 1200px;
+    margin: 0px auto;
+}
+
+
+@media only all and (max-width: 1296px) {
+    .wrapper {
+        width: 100%;
+        margin: 0px auto;
+        padding: 0px 48px;
+        box-sizing: border-box;
+    }
+}
+
+@media only all and (max-width: 991px) {
+    .wrapper {
+        padding: 0px 10px;
+    }
+}
+
+
+
+.section-space {
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    &.before-footer {
+        padding-bottom: 120px;
+    }
+}
+
+.whitebox {
+    padding: 24px 32px;
+    border-radius: $br8;
+    background-color: $white;
+    box-shadow: $box-shadow-5;
+}

@@ -1,0 +1,34 @@
+<section class="core-startups-page">
+  <div class="sigle-element-cover-slider-holder">
+    <single-element-cover-slider [items]="slider_items"></single-element-cover-slider>
+  </div>
+
+
+  <div class="startups-holder">
+    <div class="wrapper">
+      <div class="pb-32px">
+        <h4 class="h4 i-semi-bold pb-16px">{{"home.startups" | translate}}</h4>
+        <div class="pb-16px border-bottom">
+          <startups-filter [startups]="startups"
+                           (filterChange)="onFilter($event)"></startups-filter>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="col-md-4 col-12"
+               *ngFor="let item of startups">
+            <div class="startup-holder pb-32px"
+                 style="height: 100%">
+              <startup-card-home [startup]=item></startup-card-home>
+            </div>
+          </div>
+        </div>
+        <!--<div class="load-more-btn display-flex justify-content-center">
+          <a (click)="loadMoreStartup()"
+             class="btn">{{"home.more" | translate}}</a>
+        </div>-->
+      </div>
+    </div>
+  </div>
+
+</section>

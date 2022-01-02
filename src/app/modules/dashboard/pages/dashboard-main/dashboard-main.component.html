@@ -1,0 +1,68 @@
+<div class="wrapper">
+  <app-loading *ngIf="loading"></app-loading>
+  <ng-container *ngIf="!(voteStarted) && activePlan">
+        <div class="wrapper-main">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="safehtml">
+                      <div [innerHTML]="activePlan.action_description | safehtml"></div>
+                    </div>
+                    <div *ngIf="!jury && registration">
+                      <button (click)="navigate()" class="btn btn-brand">{{"dashboard.add-startup" | translate}}</button>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 right-side" *ngIf="activePlan.action_video && activePlan.action_video !== '#'">
+                    <div class="text-right mt-2" *ngIf="juryVoiceGiving || voiceGiving">
+                            <button *ngIf="!jury && voiceGiving && pageProps && !pageProps.voice_gived" class="btn btn-success pulse-anim d-block w-100 mb-3" (click)="conditionalVoiceGiving(pageProps)">{{"dashboard.start-voting" | translate}}</button>
+                            <button *ngIf="!jury && voiceGiving && pageProps && pageProps.voice_gived" class="btn btn-success" (click)="conditionalVoiceGiving(pageProps)">{{"dashboard.show-your-voices" | translate}}</button>
+                            <button *ngIf="juryOrAdmin && juryVoiceGiving && pageProps && !pageProps.juri_voice_gived" class="btn btn-success pulse-anim d-block w-100 mb-3" (click)="conditionalVoiceGiving(pageProps)">{{"dashboard.start-voting" | translate}}</button>
+                            <button *ngIf="juryOrAdmin && juryVoiceGiving && pageProps && pageProps.juri_voice_gived" class="btn btn-success pulse-anim d-block w-100 mb-3" (click)="conditionalVoiceGiving(pageProps)">{{"dashboard.show-your-voices" | translate}}</button>
+                    </div>
+                    <section class="youtube-embed-player">
+                      <div class="holder">
+                        <iframe style="width: 100%" height="315" [src]="safeYoutube" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="col-lg-6 right-side" *ngIf="!(activePlan.action_video && activePlan.action_video !== '#')">
+                          <div class="text-right mt-2" *ngIf="juryVoiceGiving || voiceGiving">
+                                  <button *ngIf="!jury && voiceGiving && pageProps && !pageProps.voice_gived" class="btn btn-success pulse-anim w-100 d-block" (click)="conditionalVoiceGiving(pageProps)">{{"dashboard.start-voting" | translate}}</button>
+                                  <button *ngIf="!jury && voiceGiving && pageProps && pageProps.voice_gived" class="btn btn-success" (click)="conditionalVoiceGiving(pageProps)">{{"dashboard.show-your-voices" | translate}}</button>
+                                  <button *ngIf="juryOrAdmin && juryVoiceGiving && pageProps && !pageProps.juri_voice_gived" class="btn btn-success pulse-anim w-100 d-block" (click)="conditionalVoiceGiving(pageProps)">{{"dashboard.start-voting" | translate}}</button>
+                                  <button *ngIf="juryOrAdmin && juryVoiceGiving && pageProps && pageProps.juri_voice_gived" class="btn btn-success pulse-anim w-100 d-block" (click)="conditionalVoiceGiving(pageProps)">{{"dashboard.show-your-voices" | translate}}</button>
+                          </div>
+                  </div>
+                </div>
+              </div>
+  </ng-container>
+  <ng-container *ngIf="voteStarted">
+        <app-dashboard-voice-giving
+                *ngIf="members && voiceGiving && (pageProps.voice_giving || pageProps.voice_gived) && (admin || !jury)"
+                [jury]="jury"
+                [pageProps]="pageProps"
+                [admin]="admin"
+                [limit]="limit"
+                [interval]="interval"
+                [juryOrAdmin]="juryOrAdmin"
+                [members]="members"
+                [voices]="voices"
+                (emitFinishVoice)="finishVoice()"
+                (emitGiveVoice)="giveVoice($event)"
+                (emitNextPage)="nextPage()"
+        ></app-dashboard-voice-giving>
+        <app-dashboard-jury-voice-giving
+                *ngIf="members && juryVoiceGiving && (pageProps.juri_voice_giving || pageProps.juri_voice_gived) && (admin || jury)"
+                [jury]="jury"
+                [pageProps]="pageProps"
+                [admin]="admin"
+                [limit]="limit"
+                [interval]="interval"
+                [juryOrAdmin]="juryOrAdmin"
+                [members]="members"
+                [voices]="voices"
+                (emitFinishVoice)="finishVoice()"
+                (emitGiveVoice)="giveVoice($event)"
+                (emitNextPage)="nextPage()"
+        ></app-dashboard-jury-voice-giving>
+  </ng-container>
+</div>

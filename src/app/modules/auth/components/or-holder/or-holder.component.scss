@@ -1,0 +1,16 @@
+@import 'src/assets/scss/abstracts/variables';
+
+.or-holder{
+    display: flex;
+    align-items: center;
+    p{
+        padding: 0px 8px;
+        color: $brand0;
+        user-select: none;
+    }
+    .line{
+        height: 3px;
+        background-color: $brand0;
+        flex-grow: 1;
+    }
+}

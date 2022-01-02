@@ -1,0 +1,192 @@
+<section class="startup-detail">
+
+
+  <div class="cover">
+    <img [src]="startup.image">
+  </div>
+
+
+  <div class="wrapper">
+    <div class="content">
+
+
+      <!-- COMMENT ================================================================================ -->
+      <div class="row">
+
+
+        <div class="col-lg-2 col-4">
+
+          <div class="logo">
+            <div class="img">
+              <img [src]="startup.logo">
+            </div>
+          </div>
+
+        </div>
+
+
+        <div class="col-md-10"></div>
+
+
+      </div>
+      <!-- ================================================================================ COMMENT -->
+
+
+      <!-- COMMENT ================================================================================ -->
+      <div class="row">
+
+        <div class="col-md-2">
+
+          <!-- COMMENT ======================================== -->
+          <div class="social pt-24px">
+            <ul>
+              <li> <a target="_blank"
+                   [href]="startup.facebook"> <i class="mdi mdi-facebook"></i> </a> </li>
+              <li> <a target="_blank"
+                   [href]="startup.twitter"> <i class="mdi mdi-twitter"></i> </a> </li>
+            </ul>
+          </div>
+          <!-- ======================================== COMMENT -->
+
+          <!-- COMMENT ======================================== -->
+          <div class="pt-24px">
+
+            <a (click)="subscribe(startup.id)"
+               *ngIf="!startup.mystartup"
+               class="btn icon btn-brand0"
+               [class.btn-white]="!startup.followed"
+               [class.btn-brand0]="startup.followed"
+               style="user-select: none;">
+              <ng-container *ngIf="startup.followed">
+                <small>{{"home.following" | translate}}</small>
+              </ng-container>
+              <ng-container *ngIf="!startup.followed">
+                <i class="mdi mdi-plus"></i>
+                <small>{{"home.follow" | translate}}</small>
+              </ng-container>
+            </a>
+            <ng-container *ngIf="pageCount !== null">
+              <div class="i-medium text-center mt-4">
+                <b>{{"dashboard.view-count" | translate}}</b>: {{pageCount}}
+              </div>
+            </ng-container>
+          </div>
+          <!-- ======================================== COMMENT -->
+
+        </div>
+
+
+        <div class="col-md-10">
+
+
+          <!-- COMMENT ======================================== -->
+          <div class="main-information mt-24px">
+
+
+            <!-- COMMENT ======================================== -->
+            <div class="left">
+
+              <h1 class="h1 i-semi-bold">{{startup.title}}</h1>
+
+              <div class="country pt-8px">
+                <div class="flag">
+                  <img src="https://www.countryflags.io/{{startup.country.code}}/flat/64.png">
+                </div>
+                <p class="p grey i-regular pl-8px">{{startup.country.name}}</p>
+              </div>
+              <p class="p i-regular lh-20px pt-16px">{{startup.description}}</p>
+
+            </div>
+            <!-- ======================================== COMMENT -->
+
+
+            <!-- COMMENT ======================================== -->
+            <div class="right">
+
+              <div class="right-holder">
+                <div class="sectors">
+                  <p class="p i-regular lh-20px"><span class="i-bold">{{"home.category" | translate}}</span>:
+                    {{startup.category}}</p>
+                  <p>
+                    <span class="i-bold">{{"home.website" | translate}}: </span>
+                    <a [href]="startup.website"
+                       type="_blank"
+                       class="h5 pt-16px link i-regular">{{startup.website}}</a>
+                  </p>
+                  <h4 class="i-semi-bold pt-16px h5 lh-24px"><span class="i-bold">{{"home.sektor" | translate}}: </span>
+                    <span class=" brand7">{{startup.sector}}</span> </h4>
+                </div>
+              </div>
+
+            </div>
+            <!-- ======================================== COMMENT -->
+
+
+          </div>
+          <!-- ======================================== COMMENT -->
+
+
+
+
+        </div>
+
+
+      </div>
+      <!-- ================================================================================ COMMENT -->
+
+
+      <!-- COMMENT ================================================================================ -->
+      <div class="row">
+        <div class="col-12">
+
+          <!-- COMMENT ======================================== -->
+          <div class="sections">
+
+            <div class="page-inside-menu">
+              <ul class="display-flex justify-content-center align-items-center ">
+                <li><a (click)="changeToSection('idea')"
+                     [ngClass]="{'active': active_section == 'idea'}">{{"home.idea" | translate}}</a></li>
+                <li><a (click)="changeToSection('video')"
+                     [ngClass]="{'active': active_section == 'video'}">{{"dashboard.video" | translate}}</a></li>
+                <!-- <li><a (click)="changeToSection('main_info')"
+                     [ngClass]="{'active': active_section == 'main_info'}">{{"home.maininfo" | translate}}</a></li> -->
+              </ul>
+            </div>
+
+            <div class="section"
+                 *ngIf="active_section == 'video'">
+              <div class="display-flex justify-content-center pt-24px">
+                <div class="notification warning i-medium" *ngIf="!video && startup.video_confirmation !== 1">
+                  {{"home.no-video" | translate}}
+                </div>
+                <iframe width="560"
+                        *ngIf="video && startup.video_confirmation === 1"
+                        height="315"
+                        [src]="video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="section"
+                 *ngIf="active_section == 'idea'">
+              <h5 class="idea-bar lh-24px i-regular pt-24px">
+                {{startup.idea}}
+              </h5>
+            </div>
+
+          </div>
+
+          <!-- ======================================== COMMENT -->
+        </div>
+      </div>
+      <!-- ================================================================================ COMMENT -->
+
+
+    </div>
+  </div>
+
+
+
+</section>

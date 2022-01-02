@@ -1,0 +1,86 @@
+@import '../abstracts/variables';
+
+.i-black {
+  font-family: "i_black" !important
+}
+
+.i-bold {
+  font-family: "i_bold" !important
+}
+
+.i-extra-bold {
+  font-family: "i_extra_bold" !important
+}
+
+.i-extra-light {
+  font-family: "i_extra_light" !important
+}
+
+.i-light {
+  font-family: "i_light" !important
+}
+
+.i-medium {
+  font-family: "i_medium" !important
+}
+
+.i-regular {
+  font-family: "i_regular" !important
+}
+
+.i-semi-bold {
+  font-family: "i_semi_bold" !important
+}
+
+.i-thin {
+  font-family: "i_thin" !important
+}
+
+
+.hi {
+  font-size: $h1;
+}
+
+.h2 {
+  font-size: $h2;
+}
+
+.h3 {
+  font-size: $h3;
+}
+
+.h4 {
+  font-size: $h4;
+}
+
+.h5 {
+  font-size: $h5;
+}
+
+.p {
+  font-size: $p;
+}
+
+.label {
+  font-size: $label;
+}
+
+.small {
+  font-size: $small;
+}
+
+.fs-24px {
+  font-size: 24px;
+}
+
+.fs-20px {
+  font-size: 20px;
+}
+
+.global-radio-label {
+  font-size: 12px;
+  font-family: "i_semi_bold";
+  color: #B0B7C3;
+  padding-bottom: 8px;
+  display: block;
+}

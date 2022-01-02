@@ -1,0 +1,45 @@
+<section class="single-element-cover-slider-section">
+  <div class="single-element-cover-slider">
+
+    <!-- SLIDER ITEM -->
+    <div class="slider-item"
+         *ngFor="let item of items"
+         attr.data-time="{{item.duration}}">
+      <!-- IMAGE -->
+      <div class="image"
+           style="height: 100%">
+        <div class="img"
+             style="height: 100%">
+          <img src="{{item.layout_image}}">
+          <div class="circle-back"
+               [ngStyle]="{'background-color': item.back_circle_color }"></div>
+          <div class="circle-front"
+               [ngStyle]="{'background-color': item.front_circle_color }"></div>
+        </div>
+      </div>
+      <!-- IMAGE -->
+
+      <!-- INFORMATION -->
+      <div class="information">
+        <div class="wrapper h100">
+          <div class="h100">
+            <div class="h100 w50 display-flex flex-direction-column justify-content-center">
+              <h1 class="i-semi-bold h1 pb-16px slider-title"
+                  [ngStyle]="{'color': item.button_color}">{{item.title}}</h1>
+              <p class="i-regular p pb-24px lh-20px w80"
+                 [ngStyle]="{'color': item.button_color}">{{item.description}}</p>
+              <div>
+                <a class="btn i-bold w-auto non-border"
+                   href="{{item.button_url}}"
+                   [ngStyle]="{'background-color': item.button_background_color,'color': item.button_color}">{{item.button_text}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- INFORMATION -->
+    </div>
+    <!-- SLIDER ITEM -->
+
+  </div>
+</section>

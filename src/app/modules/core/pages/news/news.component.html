@@ -1,0 +1,27 @@
+<section>
+  <div class="wrapper">
+    <h1 class="h1 i-semi-bold pt-40px pb-32px">{{"home.news" | translate}}</h1>
+    <ul>
+      <li *ngFor="let item of news"
+          class="pb-32px">
+        <a [routerLink]="['/news',item.id]"
+           class="news-item">
+          <div class="image">
+            <img [src]="item.image">
+          </div>
+          <div class="info pl-32px">
+            <h3 class="h3 i-medium pt-8px pb-16px">{{item.title}}</h3>
+            <div class="safehtml">
+              <div [innerHTML]="item.description | safehtml"></div>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <div class="display-flex justify-content-center">
+      <a (click)="loadMore()"
+         class="btn btn-brand7"
+         *ngIf="ifNextHave()">{{"home.more" | translate}}</a>
+    </div>
+  </div>
+</section>

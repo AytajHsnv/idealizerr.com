@@ -1,0 +1,46 @@
+<div class="lay"></div>
+<section class="header ">
+  <div class="display-flex justify-content-space-between align-items-center"
+       style="
+  height: 100px;">
+    <div class="left display-flex align-items-center">
+      <a [routerLink]="['/']"
+         class="brand">
+        <img src="/assets/images/idealizerr_logo.svg"
+             class="object-fit-contain">
+      </a>
+      <div class="d-none-mobile">
+        <header-nav [user]="user"></header-nav>
+      </div>
+    </div>
+    <div class="center"></div>
+    <div class="right ">
+      <div class="display-flex justify-content-flex-end align-items-center">
+        <div>
+          <!-- <div class="pr-16px">
+            <lang-dropdown></lang-dropdown>
+          </div> -->
+        </div>
+        <header-auth class="d-none-mobile"
+                     [user]="user"></header-auth>
+        <button class="d-block-mobile toggle-btn"
+                (click)="openMenu()"><i class="mdi mdi-menu"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="mobile-menu"
+     (clickOutside)="toggleMenu($event)"
+     *ngIf="mobileMenu">
+  <div class="mobile-menu-llog d-flex align-items-center justify-content-between">
+    <a [routerLink]="['/']"
+       style="width: 100px"
+       class="brand">
+      <img src="/assets/images/idealizerr_logo.svg"
+           class="object-fit-contain"
+           style="width: 100%">
+    </a>
+    <header-auth [user]="user"></header-auth>
+  </div>
+  <header-nav [user]="user"></header-nav>
+</div>

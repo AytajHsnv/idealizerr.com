@@ -1,0 +1,112 @@
+@import "src/assets/scss/abstracts/variables";
+.select {
+  position: relative;
+  user-select: none;
+  .head {
+    height: 40px;
+    width: 100%;
+    border: 3px solid $brand0;
+    background-color: $input;
+    box-sizing: border-box;
+    padding: 0px 16px;
+    border-radius: $br8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    i {
+      font-size: 24px;
+    }
+  }
+  .body {
+    position: absolute;
+    top: 43px;
+    left: 0px;
+    width: 100%;
+    border: 3px solid $brand0;
+    background-color: $input;
+    box-sizing: border-box;
+    border-radius: $br8;
+    max-height: 250px;
+    overflow: hidden;
+    overflow-y: scroll;
+    box-shadow: $box-shadow-5;
+    visibility: hidden;
+    opacity: 0;
+    &.active {
+      visibility: visible;
+      opacity: 1;
+      z-index: 11;
+    }
+    ul {
+      padding: 16px;
+      margin-top: -4px;
+      margin-bottom: -4px;
+      li {
+        padding-top: 4px;
+        padding-bottom: 4px;
+        cursor: pointer;
+        div.holder{
+          display: flex;
+          align-items: center;
+          &:hover {
+            p{
+              color: $black;
+            }
+          }
+        }
+        .check{
+          margin-right: 16px;
+          max-width: 24px;
+          width: 24px;
+          height: 24px;
+          border-radius: 4px;
+          border: 3px solid $brand0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          small{
+            width: 16px;
+            height: 16px;
+            border-radius: 4px;
+            background-color: transparent;
+            &.active{
+              background-color: $brand7;
+            }
+          }
+        }
+        p {
+          color: $grey;
+          display: inline-block;
+          
+        }
+      }
+    }
+  }
+}
+label {
+  font-size: $label;
+  font-family: $i-semi-bold;
+  color: $grey;
+  padding-bottom: 8px;
+  display: block;
+}
+
+.language-select {
+  .head {
+    border-color: $brand7;
+    background-color: transparent;
+    width: 40px;
+    padding: 0px 7px;
+    p {
+      color: $brand7;
+      font-family: $i-semi-bold !important;
+    }
+  }
+  .body {
+    border-color: $brand7;
+    ul {
+      padding: 12px 7px;
+    }
+  }
+}

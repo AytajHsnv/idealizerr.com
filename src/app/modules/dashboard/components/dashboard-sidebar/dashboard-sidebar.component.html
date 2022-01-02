@@ -1,0 +1,30 @@
+<div class="dashboard-sidebar">
+  <div class="top">
+    <a [routerLink]="['/']"
+       class="brand">
+      <img src="/assets/images/idealizerr_logo.svg"
+           class="object-fit-contain">
+    </a>
+  </div>
+  <div class="center">
+    <nav>
+      <ul>
+        <li><a [routerLink]="['/dashboard']"
+             (click)="setTitle('')"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{exact: true}"><i class="mdi mdi-home"></i></a></li>
+        <li *ngIf="currentUser.user_role !== 'juri'"><a [routerLink]="['/dashboard/startups']"
+             (click)="setTitle('')"
+             routerLinkActive="active"><i class="mdi mdi-view-list"></i></a></li>
+        <li><a [routerLink]="['/dashboard/notifications']"
+             (click)="setTitle('')"
+             routerLinkActive="active"><i class="mdi mdi-bell"></i><span *ngIf="notificationsLength !== 0"
+                  class="badge i-bold">{{notificationsLength}}</span></a></li>
+        <li><a [routerLink]="['/dashboard/settings']"
+             (click)="setTitle('')"
+             routerLinkActive="active"><i class="mdi mdi-settings"></i></a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="bottom"></div>
+</div>

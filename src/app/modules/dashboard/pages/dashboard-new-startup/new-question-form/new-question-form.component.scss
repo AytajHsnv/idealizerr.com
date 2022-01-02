@@ -1,0 +1,19 @@
+.box {
+  box-shadow: 4px 4px 13px 0 rgba(0, 28, 50, 0.07);
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  padding: 48px;
+  padding-bottom: 64px;
+  position: relative;
+
+  @media (max-width: 991px) {
+    padding-left: 24px;
+    padding-right: 24px;
+
+    .input-holder {
+      >label {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<div class="startup-card {{class}}">
+  <div class="cover">
+    <a [routerLink]="redirection">
+      <img *ngIf="startup.cover_image"
+           [src]="startup.cover_image" />
+    </a>
+  </div>
+  <div class="logo bg-white">
+    <a [routerLink]="redirection"
+       style="height: 100%; width: 100%">
+      <img [src]="startup.image"
+           *ngIf="startup.image">
+    </a>
+  </div>
+  <div class="information">
+    <a [routerLink]="redirection" title="{{startup.title}}">
+      <h3 class="name h3 i-medium">
+        {{startup.title}}
+      </h3>
+    </a>
+    <p class="desc p i-light lh-20px">{{startup.description}}</p>
+    <ng-container *ngIf="startup.admin_check === 2">
+      <div class="little-danger i-medium p">{{"dashboard.admin-rejected" | translate}}.</div>
+    </ng-container>
+    <ng-container *ngIf="startup.admin_check === 0">
+      <div class="little-danger i-medium p">{{"dashboard.confirm-waiting" | translate}}</div>
+    </ng-container>
+    <div class="display-flex align-items-center justify-content-space-between pb-24px">
+      <div class="country">
+        <div class="flag"
+             *ngIf="startup.country.code">
+          <img src="https://www.countryflags.io/{{startup.country.code}}/flat/64.png">
+        </div>
+        <p class="small grey i-regular pl-8px">{{startup.country.name}}</p>
+      </div>
+    </div>
+  </div>
+  <ng-container>
+    <div class="admin-is-checking i-medium"
+         *ngIf="startup.status === 'passiv'">
+      {{"dashboard.not-active" | translate}}
+    </div>
+  </ng-container>
+</div>

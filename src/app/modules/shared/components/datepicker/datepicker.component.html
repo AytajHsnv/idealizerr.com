@@ -1,0 +1,7 @@
+<div class="datepicker-holder">
+  <label *ngIf="label">{{label}}</label>
+  <div class="datepicker-input">
+    <input type="text" class="{{name}}" [placeholder]="placeholder ? placeholder : ''" data-date-format="dd MM, yyyy" #dateInput />
+    <i class="mdi mdi-calendar" (click)="dateInput.focus()"></i>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+@import 'src/assets/scss/abstracts/variables';
+
+section.footer {
+    .top {
+        border-top: $border3;
+        box-sizing: border-box;
+
+    }
+
+    .bottom {
+        border-top: $border3;
+    }
+    .top p{
+        text-align: center;
+    }
+}
+
+.subscribe-email.input-holder {
+    width: 260px;
+}
+
+@media (max-width: 1109px) {
+    .right {
+        margin-top: 30px;
+    }
+}
+h5.h5.grey a:hover {
+    color: blue;
+}

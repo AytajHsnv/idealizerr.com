@@ -1,0 +1,75 @@
+@import 'src/assets/scss/abstracts/variables';
+
+.toggle-btn {
+    color: $brand7;
+    font-size: 40px;
+}
+
+.header {
+
+    .brand {
+        img {
+            height: 42px;
+        }
+    }
+
+    @media(max-width: 918px) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        background: #fff;
+        padding: 0 48px;
+    }
+}
+
+@media(max-width: 918px) {
+    .lay {
+        height: 100px;
+    }
+}
+
+.mobile-menu {
+    display: none;
+    padding: 10px;
+    background: #fff;
+    position: fixed;
+    z-index: 9999;
+    right: 0;
+    bottom: 0;
+    top: 100px;
+    width: 400px;
+    overflow-x: scroll;
+    box-shadow: inset 1px 1px 9px 0px rgba(0, 0, 0, 0.1);
+}
+
+.d-block-mobile {
+    display: none;
+}
+
+@media (max-width: 918px) {
+    .d-none-mobile {
+        display: none;
+    }
+
+    .d-block-mobile {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+@media (max-width: 400px) {
+    .mobile-menu {
+        width: 100%;
+    }
+    .mobile-menu-llog {
+        flex-wrap: wrap;
+        header-auth {
+            width: 100%;
+            margin-top: 20px;
+        }
+    }
+}

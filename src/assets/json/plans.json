@@ -1,0 +1,32 @@
+[
+    {
+        "id":"1",
+        "name":"Qeydiyyat",
+        "desctiption":"Campaign is reviewed to ensure it is viable, appropriate and engaging",
+        "icon":"mdi-account-check"
+    },
+    {
+        "id":"2",
+        "name":"Yoxlama",
+        "desctiption":"Campaign is reviewed to ensure it is viable, appropriate and engaging",
+        "icon":"mdi-account-check"
+    },
+    {
+        "id":"3",
+        "name":"Səsvermə",
+        "desctiption":"Campaign is reviewed to ensure it is viable, appropriate and engaging",
+        "icon":"mdi-account-check"
+    },
+    {
+        "id":"4",
+        "name":"Juri səsverməsi",
+        "desctiption":"Campaign is reviewed to ensure it is viable, appropriate and engaging",
+        "icon":"mdi-account-check"
+    },
+    {
+        "id":"5",
+        "name":"Qalibin elanı",
+        "desctiption":"Campaign is reviewed to ensure it is viable, appropriate and engaging",
+        "icon":"mdi-check"
+    }
+]

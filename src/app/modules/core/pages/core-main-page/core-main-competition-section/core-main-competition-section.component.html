@@ -1,0 +1,66 @@
+<section class="core-main-competition">
+  <h1 class="text-center i-semi-bold pb-24px">{{"home.competitioninfo" | translate}}</h1>
+
+  <div>
+    <div class="row">
+      <div class="col-md-3 col-12">
+        <div class="box">
+          <div>
+            <h3 class="h3 text-center i-semi-bold text-center pb-8px"
+                *ngIf="competition">{{competition.amount_of_members.amount_of_members}}</h3>
+            <h5 class="h5 i-regular text-center">{{"home.participants" | translate}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-12"
+           *ngIf="!isCountDownGoing">
+        <div class="box">
+          <div>
+            <div class="competition-clock-holder">
+              <div class="competition-clock"></div>
+              <div class="clock-section-names display-flex justify-content-center">
+                <p>{{"home.day" | translate}}</p>
+                <div></div>
+                <p>{{"home.hour" | translate}}</p>
+                <div></div>
+                <p>{{"home.minute" | translate}}</p>
+                <div></div>
+                <p>{{"home.second" | translate}}</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6 col-12"
+           *ngIf="isCountDownGoing">
+        <div class="box">
+          <div>
+            <h3 class="h3 text-center i-semi-bold text-center brand3">{{"home.started-competition" | translate}}</h3>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-3 col-12">
+        <div class="box">
+          <div>
+            <h3 class="h3 text-center i-semi-bold text-center pb-8px"
+                *ngIf="competition">{{competition.amount_of_prize.amount_of_prize}} AZN</h3>
+            <h5 class="h5 i-regular text-center">{{"home.prize" | translate}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-center"
+         *ngIf="!isCountDownGoing">
+      <a routerLink="/dashboard/new/startup"
+         *ngIf="_user?.user_file"
+         class="btn i-bold w-auto non-border"
+         style="background-color: rgb(5, 71, 180); color: rgb(255, 255, 255);margin-top: 10px;">{{"home.join-competition" | translate}}</a>
+      <a routerLink="/auth/login"
+         *ngIf="!_user?.user_file"
+         class="btn i-bold w-auto non-border"
+         style="background-color: rgb(5, 71, 180); color: rgb(255, 255, 255);margin-top: 10px;">{{"home.join-competition" | translate}}</a>
+    </div>
+  </div>
+</section>

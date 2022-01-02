@@ -1,0 +1,56 @@
+@import 'src/assets/scss/abstracts/variables';
+
+ul {
+    margin-left: -8px;
+    margin-right: -8px;
+
+    a {
+        padding-bottom: 24px;
+        padding-top: 24px;
+        color: $brand7;
+        font-family: $i_medium;
+        font-size: $p;
+        padding-left: 8px;
+        padding-right: 8px;
+        transition: $transition-2;
+
+        @media(max-width: 454px) {
+            font-size: 12px;
+        }
+
+        border-bottom: 3px solid $transparent;
+
+        &.active {
+            font-family: $i_semi_bold;
+            border-bottom: 3px solid $brand7;
+        }
+
+        margin-bottom: -3px;
+    }
+}
+
+.page-inside-navigation {
+    background-color: $white;
+
+    &.active {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 100;
+    }
+}
+
+.page-inside-navigation-replace {
+    height: 65px;
+    width: 100%;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.border-bottom {
+    border-bottom: $border3;
+}

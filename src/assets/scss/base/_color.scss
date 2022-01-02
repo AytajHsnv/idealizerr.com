@@ -1,0 +1,50 @@
+@import '../abstracts/variables';
+//COLORS
+.white{color: $white}
+.black{color: $black}
+.brand{color: $brand3}
+.brand0{color: $brand0}
+.brand1{color: $brand1}
+.brand2{color: $brand2}
+.brand3{color: $brand3}
+.brand4{color: $brand4}
+.brand5{color: $brand5}
+.brand6{color: $brand6}
+.brand7{color: $brand7}
+.success{color: $success}
+.warning{color: $warning}
+.danger{color: $danger}
+.grey{color: $grey}
+.transparent{color: $transparent}
+.link{color: $link}
+.link-hover{color: $black; transition: $transition-2; &:hover{color: $link;}}
+.grey.link-hover{color: $grey; transition: $transition-2; &:hover{color: $link;}}
+
+// .dark{color: $dark}
+// .medium{color: $medium}
+// .light{color: $light}
+// .disabled{color: $disabled}
+// .info{color: $info}
+
+//BACKGROUND COLOR
+.bg-white{background-color: $white}
+.bg-black{background-color: $black}
+.bg-brand{background-color: $brand3}
+.bg-brand0{background-color: $brand0}
+.bg-brand1{background-color: $brand1}
+.bg-brand2{background-color: $brand2}
+.bg-brand3{background-color: $brand3}
+.bg-brand4{background-color: $brand4}
+.bg-brand5{background-color: $brand3}
+.bg-brand6{background-color: $brand6}
+.bg-brand7{background-color: $brand3}
+.bg-success{background-color: $success}
+.bg-warning{background-color: $warning}
+.bg-danger{background-color: $danger}
+.bg-grey{background-color: $grey}
+.bg-transparent{background-color: $transparent}
+
+.bg-facebook{background-color:#3B5998 }
+.bg-google{background-color: #EA4335}
+.bg-twitter{background-color: #1DA1F2}
+.bg-linkedin{background-color: #0077b5}

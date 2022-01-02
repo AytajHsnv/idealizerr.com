@@ -1,0 +1,25 @@
+<section class="{{class}}">
+  <div class="holder">
+    <div class="wrapper"
+         *ngIf="terms">
+      <h1 class="h1 i-semi-bold pb-32px">{{terms.title}}</h1>
+      <div class="safehtml">
+        <div [innerHTML]="terms.description | safehtml"></div>
+      </div>
+      <div>
+        <ul class="buttons display-flex align-items-center justify-content-center pt-32px">
+          <li>
+            <a (click)="this.close.next()"
+               class="btn btn-brand7">{{"home.close" | translate}}</a>
+          </li>
+          <li>
+            <a (click)="acceptEmitter()"
+               class="btn btn-success">{{"home.aggree" | translate}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+</section>

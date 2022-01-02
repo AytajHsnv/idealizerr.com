@@ -1,0 +1,82 @@
+@import 'src/assets/scss/abstracts/variables';
+
+.startup-filters {
+    position: relative;
+}
+
+.filter-button {
+    @media (max-width: 670px) {
+        width: 100%;
+    }
+}
+
+.filter-select-input {
+    @media (max-width: 670px) {
+        width: 100%;
+
+    }
+}
+
+.filter-select-button {
+    @media (max-width: 670px) {
+        width: 100%;
+        margin-top: 10px;
+
+        .w200px {
+            width: 100%;
+        }
+    }
+}
+
+.filter-holder {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    width: 100%;
+    min-height: 200px;
+    background-color: $brand0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity $transition-2, visibility $transition-2;
+    z-index: 1;
+    border-radius: $br8;
+    box-shadow: $box-shadow-3;
+    padding: 24px;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .tags-holder {
+        margin: -2px;
+        display: flex;
+        flex-wrap: wrap;
+        padding-right: 20%;
+
+        .tag-holder {
+            padding: 2px;
+
+            a.tag {
+                display: inline-block;
+                height: 40px;
+                line-height: 38px;
+                border: 1px solid $brand3;
+                color: $brand3;
+                padding: 0px 8px;
+                border-radius: $br4;
+                font-family: $i-medium;
+                transition: $transition-2;
+
+                &.active {
+                    background-color: $brand3;
+                    color: $white;
+                }
+            }
+        }
+
+    }
+
+
+
+}

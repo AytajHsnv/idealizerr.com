@@ -1,0 +1,123 @@
+<div class="startup-filters d-flex align-items-center justify-content-space-between ">
+  <div class="d-flex flex-wrap align-items-center justify-content-space-between w100">
+
+
+    <div class="d-flex filter-button">
+
+
+      <!-- COMMENT ================================================================================ -->
+      <div class="pr-16px filter-select-input">
+        <div class="subscribe-email input-holder">
+          <div class="input right-icon">
+            <input type='text'
+                   name='search'
+                   placeholder='{{"home.search" | translate}}'
+                   [(ngModel)]="search_key"
+                   (keyup)="serachOnEnter($event)"
+                   id='search'>
+            <i class="mdi mdi-magnify"
+               (click)="searchByKey()"></i>
+          </div>
+        </div>
+      </div>
+      <!-- ================================================================================ COMMENT -->
+
+
+      <!-- COMMENT ================================================================================ -->
+      <div class="filter-container">
+
+        <a (click)="toggleFilterBox()"
+           class="toggle-btn btn icon grey w-120px">
+          <i class="mdi mdi-filter"></i>
+          <small>{{"home.filter" | translate}}</small>
+        </a>
+
+
+
+      </div>
+      <!-- ================================================================================ COMMENT -->
+    </div>
+    <div class="filter-select-button">
+      <div class="w200px">
+        <ui-select [options]="sort_options"
+                   (value)="sortSelectChange($event)"
+                   [selected]="filterSelected.sortSelected"
+                   placeholder="{{'home.sort' | translate}}"></ui-select>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- COMMENT ================================================================================ -->
+  <div class="filter-holder"
+       [ngClass]="{'active': filter_holder_showing}"
+       (clickOutside)="closeFilterBox($event)">
+    <div>
+
+<!--      <div class="pb-24px"-->
+<!--           *ngIf="countries">-->
+<!--        <h3 class="h3 i-semi-bold pb-16px">{{"home.countries" | translate}}</h3>-->
+<!--        <div class="tags-holder">-->
+<!--          <div class="tag-holder"-->
+<!--               *ngFor="let country of countries">-->
+<!--            <a (click)="selectCountryTag(country)"-->
+<!--               class="tag"-->
+<!--               [ngClass]="{'active': country.selected && country.selected === true}">{{country.name}}</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div>-->
+<!--          <a (click)="selectAllCountyTags()"-->
+<!--             class="link i-regular pt-16px">{{"home.selectall" | translate}}</a>-->
+<!--          <a (click)="clearAllSelectedCountyTags()"-->
+<!--             *ngIf="ifCountyTagSelected()"-->
+<!--             class="link i-regular pl-16px pt-16px">{{"home.reset" | translate}}</a>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <div class="pb-24px"
+           *ngIf="category">
+        <h3 class="h3 i-semi-bold pb-16px">{{"home.category" | translate}}</h3>
+        <div class="tags-holder">
+          <div class="tag-holder"
+               *ngFor="let sector of category">
+            <a (click)="selectSectorTag('category', sector)"
+               class="tag"
+               [ngClass]="{'active': sector.selected && sector.selected === true}">{{sector.title}}</a>
+          </div>
+        </div>
+        <div>
+          <a (click)="selectAllSectorTags('category')"
+             class="link i-regular pt-16px">{{"home.selectall" | translate}}</a>
+          <a (click)="clearAllSelectedSectorTags('category')"
+             *ngIf="ifSectorTagSelected('category')"
+             class="link i-regular pl-16px pt-16px">{{"home.reset" | translate}}</a>
+        </div>
+      </div>
+
+      <div class="pb-24px"
+           *ngIf="sectors">
+        <h3 class="h3 i-semi-bold pb-16px">{{"home.innovation" | translate}}</h3>
+        <div class="tags-holder">
+          <div class="tag-holder"
+               *ngFor="let sector of sectors">
+            <a (click)="selectSectorTag('sectors', sector)"
+               class="tag"
+               [ngClass]="{'active': sector.selected && sector.selected === true}">{{sector.title}}</a>
+          </div>
+        </div>
+        <div>
+          <a (click)="selectAllSectorTags('sectors')"
+             class="link i-regular pt-16px">{{"home.selectall" | translate}}</a>
+          <a (click)="clearAllSelectedSectorTags('sectors')"
+             *ngIf="ifSectorTagSelected('sectors')"
+             class="link i-regular pl-16px pt-16px">{{"home.reset" | translate}}</a>
+        </div>
+      </div>
+
+    </div>
+    <a class="btn btn-brand" *ngIf="startups" (click)="closeBox()">{{"home.found" | translate}} : {{startups.length}}</a>
+  </div>
+  <!-- ================================================================================ COMMENT -->
+
+</div>

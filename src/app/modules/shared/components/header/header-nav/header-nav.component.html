@@ -1,0 +1,22 @@
+<nav class="pl-40px header-nav">
+        <ul class="display-flex align-items-center">
+                <li><a [routerLink]="['/about']"
+                           routerLinkActive="router-link-active"
+                           class="i-medium h5">{{"home.about" | translate}}</a></li>
+                <li><a [routerLink]="['/competition']"
+                           routerLinkActive="router-link-active"
+                           class="i-medium h5">{{"home.competition" | translate}}</a></li>
+                <!-- <li><a [routerLink]="['/investors']"
+                           routerLinkActive="router-link-active"
+                           class="i-medium h5">{{"home.investors" | translate}}</a></li> -->
+                <li><a [routerLink]="['/startups']"
+                           routerLinkActive="router-link-active"
+                           class="i-medium h5">{{"home.startups" | translate}}</a></li>
+                <li *ngIf="user !== null"><a [routerLink]="['/following']"
+                           routerLinkActive="router-link-active"
+                           class="i-medium h5">{{"home.following-startups" | translate}}</a></li>
+                <li><a [routerLink]="['/news']"
+                        routerLinkActive="router-link-active"
+                        class="i-medium h5">{{"home.news" | translate}}</a></li>
+        </ul>
+</nav>

@@ -1,0 +1,52 @@
+<div class="startup-card {{class}}">
+  <div class="cover">
+    <input type="file"
+           #cover
+           accept="image/x-png,image/gif,image/jpeg"
+           style="display: none;"
+           [disabled]="!new"
+           (change)="logoChange($event, 'image')"
+           name="cover">
+    <a [routerLink]="redirection"
+       class="hover-add"
+       (click)="selectFile(cover)">
+      <i class="mdi mdi-plus-circle success"
+         *ngIf="new"></i>
+      <img *ngIf="startup.cover_image"
+           [src]="startup.cover_image" />
+    </a>
+  </div>
+  <div class="logo bg-white">
+    <input type="file"
+           #logo
+           accept="image/x-png,image/gif,image/jpeg"
+           style="display: none;"
+           [disabled]="!new"
+           (change)="logoChange($event, 'logo')"
+           name="logo">
+    <a [routerLink]="redirection"
+       class="hover-add"
+       (click)="selectFile(logo)"
+       style="height: 100%; width: 100%;">
+      <i class="mdi mdi-plus-circle success"
+         *ngIf="new"></i>
+      <img [src]="startup.image"
+           *ngIf="startup.image">
+    </a>
+  </div>
+  <div class="information">
+    <a [routerLink]="redirection" title="{{startup.title}}">
+      <h3 class="name h3 i-medium">
+        {{startup.title}}
+      </h3>
+    </a>
+    <p *ngIf="startup.category" style="padding-left: 24px" class="p i-light lh-20px mb-8px"><b>{{"home.category" | translate}}: </b>{{startup.category}}</p>
+    <p class="desc p i-light lh-20px mb-8px">{{startup.description}}</p>
+    <ng-container *ngIf="startup.admin_check === 2">
+      <div class="little-danger i-medium p">{{"dashboard.admin-rejected" | translate}}.</div>
+    </ng-container>
+    <ng-container *ngIf="startup.admin_check === 0">
+      <div class="little-danger i-medium p">{{"dashboard.confirm-waiting" | translate}}</div>
+    </ng-container>
+  </div>
+</div>

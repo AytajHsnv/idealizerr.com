@@ -1,0 +1,48 @@
+@import "src/assets/scss/abstracts/variables";
+
+.box {
+  background: $white;
+  box-shadow: $box-shadow-1;
+  border-radius: $br4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 160px;
+  cursor: pointer;
+  transition: $transition-2;
+
+  &:hover {
+    box-shadow: $box-shadow-2;
+  }
+
+  @media (max-width: 768px) {
+    height: auto;
+    padding: 20px 0;
+  }
+}
+
+.competition-clock-holder {
+  @media (max-width: 768px) {
+    transform: scale(1);
+  }
+}
+.clock-title {
+  @media (max-width: 768px) {
+    margin-bottom: 20px;
+  }
+}
+
+.clock-section-names {
+  p {
+    padding: 8px 0px;
+    text-align: center;
+    font-family: $i_regular;
+    width: 21%;
+    font-size: $p;
+    color: $grey;
+  }
+
+  div {
+    width: 6%;
+  }
+}

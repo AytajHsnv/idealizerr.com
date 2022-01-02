@@ -1,0 +1,11 @@
+<div class="information">
+  <div class="image">
+    <img [src]="user.user_file">
+    <label for="user_avatar">
+      <i class="mdi mdi-pencil"></i>
+    </label>
+    <input type="file" (change)="avatarUpload($event)" id="user_avatar" class="d-none">
+  </div>
+  <h3 class="h3 i-medium pt-32px">{{user.name}} {{user.surname}}</h3>
+  <p class="h5 i-light pt-16px">{{user.email}}</p>
+</div>

@@ -1,0 +1,40 @@
+<div class="whitebox">
+  <h4 class="h4 i-semi-bold grey pb-40px">{{"global.your-email" | translate}}</h4>
+
+
+  <div>
+    <form [formGroup]='form'
+          autocomplete='on'
+          validate
+          (keyup.enter)='submitForm()'>
+
+
+      <!-- NAME ================================================================================ -->
+      <div class="row">
+        <div class="col-12">
+          <div class="input-holder pb-24px">
+            <label for="email">{{"global.email" | translate}}</label>
+            <div class="input right-icon">
+              <input type='email'
+                     name='email'
+                     placeholder='{{"global.your-email" | translate}}'
+                     disabled
+                     formControlName='email'
+                     id='email'>
+            </div>
+            <ul>
+              <li *ngIf="form.controls['email'].hasError('email') && form.controls['email'].touched">
+                {{"global.correct-email" | translate}}</li>
+              <li *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">
+                {{"global.requiredField" | translate}}</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ================================================================================ COMMENT -->
+
+    </form>
+  </div>
+
+
+</div>

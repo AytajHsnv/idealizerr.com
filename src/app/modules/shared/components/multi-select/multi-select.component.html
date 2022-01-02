@@ -1,0 +1,60 @@
+<div class="select-holder {{class}}" (clickOutside)="closeDropdown($event)">
+  <label *ngIf="label">{{label}}</label>
+  <div class="select">
+    
+    
+    <!-- HEAD ================================================================================ -->
+    <div class="head" (click)="toggleDropdown()">
+
+
+      <!-- COMMENT ======================================== -->
+      <div>
+        <p class="placeholder p i-medium grey" *ngIf="!selecteds">{{placeholder ? placeholder : " "}}</p>
+        <p *ngIf="selecteds" class="selected p i-medium black" >{{(selecteds.length ? selecteds.length : 0) + " seçilmiş"}}</p>
+      </div>
+      <!-- ======================================== COMMENT -->
+  
+  
+      <!-- COMMENT ======================================== -->
+      <div>
+        <i class="{{icon}}"></i>
+      </div>
+      <!-- ======================================== COMMENT -->
+  
+  
+    </div>
+    <!-- ================================================================================ HEAD -->
+
+
+    <!-- BODY ================================================================================ -->
+    <div class="body" [ngClass]="{'active': show_options}">
+
+      
+      <!-- OPTIONS ======================================== -->
+      <ul *ngIf="options">
+        <li *ngFor="let option of options">
+          <div class="holder" (click)="select(option)">
+            <div class="check">
+              <small class="active" [ngClass]="{'active': option.selected}"></small>
+            </div>
+            <p class="p i-medium black">{{option.name}}</p>
+          </div>
+        </li>
+      </ul>
+      <!-- ======================================== OPTIONS -->
+
+
+      <!-- NO OPTION ======================================== -->
+      <ul *ngIf="!options"><li>
+
+        <p class="p i-regular black">Seçim yoxdur</p>
+      </li></ul>
+      <!-- ======================================== NO OPTION -->
+
+
+    </div>
+    <!-- ================================================================================ BODY -->
+
+
+  </div>
+</div>

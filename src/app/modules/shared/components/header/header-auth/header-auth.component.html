@@ -1,0 +1,51 @@
+<!-- COMMENT ================================================================================ -->
+<div class="buttons"
+     *ngIf="user === null">
+     <ul class="display-flex align-items-center">
+          <li><a [routerLink]="['/auth/login']"
+                  class="btn btn-brand7 outline i-bold">{{"global.signin" | translate}}</a></li>
+          <li><a [routerLink]="['/auth/signup']"
+                  class="btn btn-brand7 i-bold">{{"global.signup" | translate}}</a></li>
+     </ul>
+</div>
+<!-- ================================================================================ COMMENT -->
+
+
+<!-- COMMENT ======================================== -->
+<div class="user-dropdown"
+     *ngIf="user"
+     (clickOutside)="closeUserDropdown($event)">
+     <div class="head"
+          (click)="toggleUserDropdown()">
+          <div *ngIf="!user.user_file"
+               class="avatar icon">
+               <i class="mdi mdi-user"></i>
+          </div>
+          <div *ngIf="user.user_file"
+               class="avatar image">
+               <img [src]="user.user_file">
+          </div>
+          <div class="display-flex align-items-center justify-content-center pr-16px">
+               <h4 class="h5 pl-8px i-regular lh-28px">
+                    {{ user.name && user.surname ? user.name + " " + user.surname : " " }}
+               </h4>
+               <i class="pl-8px mdi mdi-menu-down brand7"></i>
+          </div>
+     </div>
+     <div class="body"
+          [ngClass]="{'active': user_dropdown}">
+          <ul>
+               <li *ngIf="route == ''"><a [routerLink]="['/dashboard']"
+                       class="p i-medium">{{"global.tools" | translate}}</a></li>
+               <li *ngIf="route == 'dashboard'"><a [routerLink]="['/']"
+                       class="p i-medium">{{"global.homepage" | translate}}</a></li>
+               <li><a [routerLink]="['/dashboard/new/startup']"
+                         class="p i-medium">{{"dashboard.add-startup" | translate}}</a></li>
+               <li><a [routerLink]="['/dashboard/settings']"
+                         class="p i-medium">{{"dashboard.settings" | translate}}</a></li>
+               <li><a (click)="logout()"
+                       class="p i-medium">{{"global.exit" | translate}}</a></li>
+          </ul>
+     </div>
+</div>
+<!-- ======================================== COMMENT -->

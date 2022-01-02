@@ -1,0 +1,170 @@
+@import "src/assets/scss/abstracts/variables";
+
+// COMMENT ================================================================================
+.ngx-ea-intl-tel-input-holder{
+    position: relative;
+    user-select: none;
+}
+// ================================================================================ COMMENT
+
+// COMMENT ================================================================================
+label {
+  font-size: $label;
+  font-family: $i-semi-bold;
+  color: $grey;
+  padding-bottom: 8px;
+  display: block;
+}
+// ================================================================================ COMMENT
+.ngx-ea-intl-tel-input-holder.disabled {
+    .ngx-ea-body{
+        display: none !important;
+    }
+    .ngx-ea-body.active{
+        display: none !important;
+    }
+    .ngx-ea-head {
+        cursor: not-allowed;
+    }
+}
+
+
+// COMMENT ================================================================================
+.ngx-ea-head{
+    height: 40px;
+    width: 100%;
+    border: 3px solid $brand0;
+    background-color: $input;
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: $br8;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .country{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 116px;
+        height: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        background-color: $brand0;
+
+        img{
+            width: 20px;
+            object-fit: contain;
+        }
+        small{
+            font-family: $i-medium;
+            font-size: $p;
+            color: $black;
+            padding-left: 8px;
+            line-height: 37px;
+            min-width: 56px;
+        }
+
+    }
+    .ngx-ea-input {
+        width: calc(100% - 116px);
+        height: 100%;
+        input{
+            font-family: $i-medium;
+            font-size: $p;
+            color: $black;
+            height: 100%;
+            width: 100%;
+            background: none;
+            border: none;
+            padding-left: 8px;
+            &::placeholder{
+                color: $grey;
+            }
+        }
+    }
+}
+// ================================================================================ COMMENT
+
+
+
+// COMMENT ================================================================================
+.ngx-ea-body{
+    position: absolute;
+    top: 43px;
+    left: 0px;
+    width: 100%;
+    border: 3px solid $brand0;
+    background-color: $input;
+    box-sizing: border-box;
+    border-radius: $br8;
+    max-height: 250px;
+    overflow: hidden;
+    overflow-x: scroll;
+    box-shadow: $box-shadow-5;
+    visibility: hidden;
+    opacity: 0;
+    .search-input{
+        width: 100%;
+        height: 40px;
+        padding: 4px 16px;
+        background-color: $brand0;
+        position: relative;
+        z-index: 2;
+        input{
+            background-color: $white;
+            font-family: $i-medium;
+            font-size: $p;
+            color: $black;
+            height: 100%;
+            width: 100%;
+            border: none;
+            padding-left: 8px;
+            border-radius: $br8;
+            &::placeholder{
+                color: $grey;
+            }
+        }
+    }
+    &.active{
+        visibility: visible;
+        opacity: 1;
+        z-index: 11;
+    }
+    ul{
+        padding: 16px 16px 60px 16px;
+        margin-top: -4px;
+        margin-bottom: -4px;
+        max-height: 250px;
+        overflow: hidden;
+        overflow-y: scroll;
+        li{
+            padding-top: 4px;
+            padding-bottom: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            img{
+                width: 20px;
+                object-fit: contain;
+            }
+            p{
+                font-family: $i-medium;
+                font-size: $p;
+                color: $grey;
+                padding-left: 8px;
+                line-height: 37px;
+                transition: $transition-2;
+
+            }
+            &:hover{
+                p{
+                    color: $black;
+                }
+            }
+        }
+
+    }
+}
+// ================================================================================ COMMENT

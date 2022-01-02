@@ -1,0 +1,35 @@
+@import 'src/assets/scss/abstracts/variables';
+
+.dashboard-header {
+    position: fixed;
+    top: 0px;
+    left: 100px;
+    width: calc(100% - 100px);
+    height: 100px;
+    background-color: $brand0;
+    z-index: 100;
+
+    @media (max-width: 563px) {
+        left: 71px;
+        width: calc(100% - 71px);
+    }
+
+    .wrapper {
+        border-bottom: 1px solid $white;
+
+        @media (max-width: 563px) {
+            padding: 0;
+        }
+
+    }
+}
+
+@media (max-width: 1066px) {
+    .d-block-mobile {
+        display: none;
+    }
+
+    .mob-w100 {
+        width: 100%;
+    }
+}

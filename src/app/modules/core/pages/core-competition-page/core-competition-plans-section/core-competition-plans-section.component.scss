@@ -1,0 +1,145 @@
+@import "src/assets/scss/abstracts/variables";
+
+.plan-container {
+  display: flex;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+}
+
+.plan {
+  flex: 1 1 0px;
+
+
+  @media (max-width: 991px) {
+    .h4.i-medium.text-center.pr-24px.pl-24px.pt-24px {
+      font-size: 16px;
+      padding-top: 14px;
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .icon-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    .icon {
+      width: 100px;
+      height: 100px;
+      border: $border3;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: 991px) {
+        width: 70px;
+        height: 70px;
+      }
+
+      img {
+        width: 32px;
+        height: 32px;
+        object-fit: contain;
+
+      }
+    }
+
+    .line {
+      border-bottom: $border3;
+      flex-grow: 1;
+
+      @media (max-width: 768px) {
+        flex-grow: 0;
+      }
+    }
+  }
+
+
+  .safehtml {
+    height: 114px;
+    overflow: hidden;
+    padding: 8px 16px;
+
+    >* {
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      height: auto;
+    }
+  }
+
+  &.passed {
+    .icon-holder {
+      .icon {
+        background-color: $brand0;
+      }
+    }
+  }
+
+  &.active {
+    .icon-holder {
+      .icon {
+        background-color: $brand0;
+        box-shadow: 0 0 0 0 rgba(59, 69, 192, 0.8);
+        animation: pulse 2s infinite;
+      }
+    }
+  }
+}
+
+.pulse {
+  margin: 100px;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgb(204, 169, 44);
+  cursor: pointer;
+
+}
+
+.pulse:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(59, 69, 192, 0.8);
+  }
+
+  70% {
+    -webkit-box-shadow: 0 0 0 14px rgba(59, 69, 192, 0);
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(59, 69, 192, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(59, 69, 192, 0.8);
+    box-shadow: 0 0 0 0 rgba(59, 69, 192, 0.8);
+  }
+
+  70% {
+    -moz-box-shadow: 0 0 0 14px rgba(59, 69, 192, 0);
+    box-shadow: 0 0 0 14px rgba(59, 69, 192, 0);
+  }
+
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(59, 69, 192, 0);
+    box-shadow: 0 0 0 0 rgba(59, 69, 192, 0);
+  }
+}

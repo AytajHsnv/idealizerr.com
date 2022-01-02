@@ -1,0 +1,14 @@
+<section *ngIf="items">
+  <div class="wrapper">
+    <div class="row">
+      <div class="col-md-3 col-sm-6 col-12" *ngFor="let item of items">
+        <a [routerLink]="['/how-it-works',item.id]" class="item">
+          <div class="image">
+            <img [src]="item.icon">
+          </div>
+          <p class="p i-semi-bold pt-32px">{{item.title}}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

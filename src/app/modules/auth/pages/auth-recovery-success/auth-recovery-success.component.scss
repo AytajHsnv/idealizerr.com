@@ -1,0 +1,12 @@
+@import 'src/assets/scss/abstracts/variables';
+
+.auth-success-holder{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    i{
+        font-size: 120px;
+         color: $brand7;
+    }
+}

@@ -1,0 +1,20 @@
+<section class="core-competition-jury">
+  <h1 class="h1 i-semi-bold pb-24px">{{"home.jury" | translate}}</h1>
+  <div>
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-12"
+           *ngFor="let item of jury">
+        <div class="jury">
+
+          <div class="display-flex align-items-center">
+            <div class="image">
+              <img src="{{item.user_file}}">
+            </div>
+            <h4 class="h4 i-semi-bold pl-24px">{{item.name}}</h4>
+          </div>
+          <p class="p i-light lh-20px pt-16px">{{item.user_info}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

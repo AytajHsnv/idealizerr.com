@@ -1,0 +1,45 @@
+  <div class="wrapper-main"
+       *ngIf="!pageProps.voice_gived && pageProps.voice_giving">
+      <h2 class="i-regular h4"><span class="i-bold">{{"dashboard.voice-limit-general" | translate}}:</span> {{limit}}</h2>
+      <h2 class="i-regular h4 mb-5"><span class="i-bold">{{"dashboard.voice-limit-per-page" | translate}}:</span> {{2 - interval}}</h2>
+    <div class="row">
+      <div class="col-md-4"
+           *ngFor="let item of members; let i = index">
+        <div class="startup-holder pb-32px"
+             style="height: 100%">
+          <startup-card-voice [startup]=item
+                              [index]="i"
+                              (voiceGive)="giveVoice($event)"
+                              [jury]="false">
+          </startup-card-voice>
+        </div>
+      </div>
+    </div>
+      <div class="row justify-content-center"
+           *ngIf="limit !== 0 && interval === 2">
+        <button class="btn btn-success pulse-anim"
+                (click)="nextPage()">{{"dashboard.next-page" | translate}}</button>
+      </div>
+      <div class="row justify-content-center"
+           *ngIf="limit === 0">
+        <button class="btn btn-success"
+                (click)="finishVoice()">{{"dashboard.voice-end" | translate}}</button>
+      </div>
+  </div>
+  <div class="wrapper-main"
+       *ngIf="pageProps.voice_gived">
+    <h2 class="i-regular h4 mb-5"><span class="i-bold">{{"dashboard.voice-summary" | translate}}</span></h2>
+    <div class="row">
+      <div class="col-md-4"
+           *ngFor="let item of members; let i = index">
+        <div class="startup-holder pb-32px"
+             style="height: 100%">
+          <startup-card-voice [startup]=item
+                              [index]="i"
+                              [rate]="false"
+                              (voiceGive)="giveVoice($event)">
+          </startup-card-voice>
+        </div>
+      </div>
+    </div>
+  </div>

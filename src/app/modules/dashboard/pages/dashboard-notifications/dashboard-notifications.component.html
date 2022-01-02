@@ -1,0 +1,16 @@
+<section>
+    <div class="wrapper">
+        <ul>
+            <li *ngFor="let item of notifications; let i = index" [ngClass]="{'new-notification': notificationsLength !== 0 ? i <= (notificationsLength - 1) : false, 'its-link': item.startup_id}" (click)="navigate(item)">
+                <p class="p i-medium">{{item.text}}</p>
+                <small class="small i-regular grey">{{item.time}}</small>
+            </li>
+            <!-- <li>
+                <p class="p i-medium">Lorem ipsum Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
+                    ullam aut, sunt, omnis aperiam optio error doloremque cumque possimus quo quidem nemo id ut et totam
+                    facere temporibus voluptas facilis? dolor sit amet consectetur adipisicing elit. Velit esse expedita
+                    officiis </p> <small class="small i-regular grey">12 deq evvel</small>
+            </li> -->
+        </ul>
+    </div>
+</section>

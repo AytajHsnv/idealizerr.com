@@ -1,0 +1,26 @@
+<div class="linear-notification">
+  <ul>
+    <li *ngFor="let notification of notifications">
+      <div [className]="'notification ' + notification.status">
+        <div class="left display-flex align-items-center justify-content-center">
+          <i *ngIf="notification.status == 'success'"
+             class="mdi mdi-check-circle"></i>
+          <i *ngIf="notification.status == 'warning'"
+             class="mdi mdi-alert"></i>
+          <i *ngIf="notification.status == 'danger'"
+             class="mdi mdi-minus-circle"></i>
+          <p class="p white i-medium user-select-none">{{notification.text}}</p>
+        </div>
+        <div class="right">
+          <i class="mdi mdi-check mr-3"
+             style="color:#00CF69"
+             *ngIf="notification.hold"
+             (click)="accept(notification)"></i>
+          <i class="mdi mdi-close"
+             [ngStyle]="{color: notification.hold ? '#FF045B' : ''}"
+             (click)="close(notification)"></i>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

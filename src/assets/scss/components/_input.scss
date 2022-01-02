@@ -1,0 +1,109 @@
+@import "../abstracts/variables";
+
+.input-holder {
+  position: relative;
+  label {
+    font-size: $label;
+    font-family: $i-semi-bold;
+    color: $grey;
+    padding-bottom: 8px;
+    display: block;
+  }
+  .input {
+    textarea,
+    input {
+        height: 40px;
+        width: 100%;
+        border: 3px solid $brand0;
+        background-color: $input;
+        box-sizing: border-box;
+        padding-left: 16px;
+        border-radius: $br8;
+        font-family: $i-medium;
+        font-size: $p;
+        color: $black;
+        transition: $transition-2;
+        &::placeholder{
+          color: $grey;
+        }
+        &:focus{
+          transform: scale(1.01);
+          box-shadow: $box-shadow-3;
+        }
+        &.ng-touched.ng-invalid{
+          // border-color: $danger;
+        }
+    }
+    textarea{
+      height: initial;
+      resize: none;
+      min-height: 140px;
+      padding-top: 8px;
+    }
+    &.right-icon{
+      position: relative;
+      input{
+        padding-right: 45px;
+      }
+      i{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 24px;
+        color: $black;
+        position: absolute;
+        row-gap: 0px;
+        right: 0px;
+        background-color: $brand0;
+        border-top-right-radius: $br8;
+        border-bottom-right-radius: $br8;
+      }
+    }
+    &.right-icon.brand7{
+      input{
+        border-color: $brand7;
+      }
+      i{
+        background-color: $brand7;
+        color: $white;
+      }
+    }
+    &.password{
+      position: relative;
+      input{
+        padding-right: 45px;
+      }
+      i{
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 24px;
+        color: $grey;
+        position: absolute;
+        top: 0px;
+        right: 8px;
+      }
+    }
+  }
+
+  >ul{
+    position: absolute;
+    bottom: -4px;
+    left: 0px;
+    width: 100%;
+    z-index: 10;
+    li{
+      font-size: $small;
+      font-family: $i-medium;
+      color: $white;
+      background-color: $danger;
+      line-height: 20px;
+      border-radius: $br8;
+      padding: 4px 8px;
+    }
+  }
+}

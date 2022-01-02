@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="414px" height="643px" viewBox="0 0 414 643" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>guarantee</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Core" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-103.000000, -442.000000)" fill-rule="nonzero">
+            <g id="guarantee" transform="translate(74.000000, 342.000000)">
+                <polygon id="Path" fill="#56C4ED" transform="translate(236.000000, 603.000000) rotate(33.000000) translate(-236.000000, -603.000000) " points="243.47703 426 71 561.568158 220.553479 780 248.910188 627.676009 401 656.081626"></polygon>
+                <polygon id="Path" fill="#56C4ED" transform="translate(231.937498, 233.022907) rotate(34.000000) translate(-231.937498, -233.022907) " points="246.590465 63.2878464 66.9374977 184.326127 216.490977 402.757968 244.847686 250.433977 396.937498 278.839595"></polygon>
+                <path d="M235.980469,191 C122.289062,191 29.792969,283.5 29.792969,397.203125 C29.792969,510.902344 122.289062,603.402344 235.980469,603.402344 C349.675781,603.402344 442.175781,510.902344 442.175781,397.199219 C442.175781,283.5 349.675781,191 235.980469,191 Z" id="Path" fill="#FFE07F"></path>
+                <path d="M235.980469,191 L235.980469,603.402344 C349.675781,603.402344 442.175781,510.902344 442.175781,397.199219 C442.175781,283.5 349.675781,191 235.980469,191 Z" id="Path" fill="#FFD23A"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,91 @@
+@import 'src/assets/scss/abstracts/variables';
+
+section {
+    padding-bottom: 40px;
+}
+
+.section-names-container {
+    width: 130px;
+
+    @media (max-width: 768px) {
+        width: 100%;
+    }
+}
+
+.section-names {
+    position: fixed;
+    width: 130px;
+
+    @media (max-width: 768px) {
+        position: static;
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    &:before {
+        content: '';
+        width: 1px;
+        height: 1px;
+        display: inline-block;
+    }
+
+    a {
+        line-height: 50px;
+        border-radius: $br8;
+        width: 100%;
+        text-align: center;
+        font-family: $i_medium;
+        color: $black;
+        background-color: $white;
+        margin-bottom: 8px;
+        transition: $transition-2;
+        font-size: 14px;
+
+        &.active {
+            background-color: $brand7;
+            color: $white;
+        }
+
+        &.disabled {
+            color: gray;
+            background: #F9FAFE;
+        }
+
+        &:hover {
+            box-shadow: $box-shadow-5;
+        }
+    }
+}
+
+.menu-pulse {
+    box-shadow: 0 0 0 0 rgba(59, 69, 192, 0.8);
+    animation: pulse 2s infinite;
+}
+
+.danger-link {
+    background-color: $danger !important;
+    color: #fff !important;
+    &.active {
+        background-color: darken($danger, 10%) !important;
+    }
+    &.disabled {
+        background-color: #F9FAFE !important;
+        color: gray !important;
+    }
+}
+.success-link {
+    background-color: $success !important;
+    color: #fff !important;
+    &.active {
+        background-color: darken($success, 10%) !important;
+    }
+    &.disabled {
+        background-color: #F9FAFE !important;
+        color: gray !important;
+    }
+}
+.force-order {
+    @media (max-width: 768px) {
+        order: -1;
+    }
+}

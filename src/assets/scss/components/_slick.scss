@@ -1,0 +1,21 @@
+@import '../abstracts/variables';
+
+.single-element-cover-slider ul.slick-dots{
+    display: flex;
+    justify-content: center;
+    li{
+        padding: 16px 8px;
+        button{
+            color: transparent;
+            width: 30px;
+            height: 8px;
+            border-radius: 4px;
+            background-color: $brand0;
+        }
+        &.slick-active{
+            button{
+                background-color: $brand3;
+            }
+        }
+    }
+}

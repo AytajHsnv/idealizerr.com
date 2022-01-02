@@ -1,0 +1,58 @@
+<div class="auth-recovery-email-holder">
+  <div class="top">
+    <h2 class="h2 i-medium pb-8px">
+      {{"global.recover-pass" | translate}}</h2>
+    <p class="p i-light">{{"global.recover-email-link" | translate}}</p>
+  </div>
+  <div class="center">
+    <div class="pb-40px">
+      <form [formGroup]='form'
+            autocomplete='on'
+            validate
+            (keyup.enter)='submitForm()'>
+
+
+        <!-- 1 -->
+        <div class="row">
+          <div class="col-12">
+            <!-- COMMENT ================================================================================ -->
+            <div class="input-holder pb-24px">
+              <label for="email">{{"global.email" | translate}}</label>
+              <div class="input right-icon">
+                <input type='email'
+                       name='email'
+                       placeholder='{{"global.your-email" | translate}}'
+                       formControlName='email'
+                       id='email'>
+              </div>
+              <ul>
+                <li *ngIf="form.controls['email'].hasError('email') && form.controls['email'].touched">
+                  {{"global.correct-email" | translate}}</li>
+                <li *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">
+                  {{"global.requiredField" | translate}}</li>
+              </ul>
+            </div>
+            <!-- ================================================================================ COMMENT -->
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="row">
+          <div class="col-md-12 col-12">
+            <button class="btn btn-brand7 w100"
+                    [disabled]="!form.valid"
+                    (click)="submitForm()">{{"global.send" | translate}}</button>
+          </div>
+          <div class="col-md-12 col-12">
+            <div class="pt-16px">
+              <a (click)="locationBack()"
+                 class="btn btn-grey w100">{{"global.back" | translate}}</a>
+            </div>
+          </div>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="bottom"></div>
+</div>

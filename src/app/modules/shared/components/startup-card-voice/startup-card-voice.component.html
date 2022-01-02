@@ -1,0 +1,111 @@
+<div class="startup-card">
+  <div class="cover">
+    <a [routerLink]="redirection" target="_blank">
+      <img *ngIf="startup.cover_image"
+           [src]="startup.cover_image" />
+    </a>
+  </div>
+  <div class="logo bg-white">
+    <a [routerLink]="redirection" target="_blank"
+       style="height: 100%; width: 100%">
+      <img [src]="startup.image"
+           *ngIf="startup.image">
+    </a>
+  </div>
+  <div class="information">
+    <a [routerLink]="redirection" title="{{startup.title}}" target="_blank">
+      <h3 class="name h3 i-medium">
+        {{startup.title}}
+      </h3>
+    </a>
+    <p class="desc p i-light lh-20px">{{startup.description}}</p>
+    <div class="d-flex flex-wrap align-items-center justify-content-space-between pb-24px">
+      <div class="country">
+        <div class="flag"
+             *ngIf="startup.country.code">
+          <img src="https://www.countryflags.io/{{startup.country.code}}/flat/64.png">
+        </div>
+        <p class="small grey i-regular pl-8px">{{startup.country.name}}</p>
+      </div>
+      <ng-container *ngIf="rate">
+        <div class="rate display-flex align-items-center"
+             (click)="giveVoice(true)"
+             *ngIf="!startup.voiceGiven">
+          <p class="p brand3 i-semi-bold pr-8px">{{"dashboard.rate" | translate}}</p>
+          <i class="mdi mdi-star-box"
+             style="border-radius: 50%;"></i>
+        </div>
+        <div class="rate display-flex align-items-center"
+             *ngIf="startup.voiceGiven"
+             (click)="giveVoice(false)">
+          <p class="p success i-semi-bold pr-8px">{{"dashboard.voice-given" | translate}}</p>
+          <i class="mdi mdi-star success"></i>
+        </div>
+      </ng-container>
+    </div>
+    <div class="ranks display-flex">
+      <div class="starup-vote">
+        <h2 class="h2 i-medium text-center">{{startup.startup_vote}}</h2>
+        <small class="small i-light pt-8px">{{"dashboard.startups-voice" | translate}}</small>
+        <!-- <div class="badge">
+          <img src="/assets/images/guarantee-silver.svg">
+        </div> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" *ngIf="juryVoiceModal">
+  <div class="modal-content" (clickOutside)="closeModal($event)">
+    <div class="close"><i class="mdi mdi-close" (click)="onKeyUp({keyCode: 27})"></i></div>
+    <h4 class="h4 i-bold">{{"dashboard.rate-by-criteria" | translate}}</h4>
+    <div class="mt-32px">
+        <div class="select-holder">
+          <ui-select label="{{'dashboard.customer' | translate}}"
+          placeholder="{{'dashboard.rate-select' | translate}}"
+          name="criteria1"
+          [options]="scoreValues"
+          (value)="scoreSelected($event)"></ui-select>
+        </div>
+    </div>
+    <div class="mt-8px">
+        <div class="select-holder">
+          <ui-select label="{{'dashboard.product' | translate}}"
+          placeholder="{{'dashboard.rate-select' | translate}}"
+          name="criteria2"
+          [options]="scoreValues"
+          (value)="scoreSelected($event)"></ui-select>
+        </div>
+    </div>
+    <div class="mt-8px">
+        <div class="select-holder">
+          <ui-select label="{{'home.competition' | translate}}"
+          placeholder="{{'dashboard.rate-select' | translate}}"
+          name="criteria3"
+          [options]="scoreValues"
+          (value)="scoreSelected($event)"></ui-select>
+        </div>
+    </div>
+    <div class="mt-8px">
+        <div class="select-holder">
+          <ui-select label="{{'dashboard.finance' | translate}}"
+          placeholder="{{'dashboard.rate-select' | translate}}"
+          name="criteria4"
+          [options]="scoreValues"
+          (value)="scoreSelected($event)"></ui-select>
+        </div>
+    </div>
+    <div class="mt-8px">
+        <div class="select-holder">
+          <ui-select label="{{'home.team' | translate}}"
+          placeholder="{{'dashboard.rate-select' | translate}}"
+          name="criteria5"
+          [options]="scoreValues"
+          (value)="scoreSelected($event)"></ui-select>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between mt-8px">
+      <button class="btn btn-success btn-sm" (click)="submitVoiceJury($event)" [disabled]="!(selectedValues.criteria1 && selectedValues.criteria2 && selectedValues.criteria3 && selectedValues.criteria4 && selectedValues.criteria5)">{{"dashboard.rate" | translate}}</button>
+    </div>
+  </div>
+</div>

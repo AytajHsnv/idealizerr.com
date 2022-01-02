@@ -1,0 +1,23 @@
+<div class="auth-success-holder">
+  <div class="top"></div>
+  <div class="center"
+       *ngIf="success_type == 'signup'">
+    <div class="display-flex align-items-center justify-content-center flex-direction-column">
+      <i class="mdi mdi-check"></i>
+      <p class="p i-medium text-center pb-1">{{"global.success-signup" | translate}}</p>
+      <p class="p i-medium text-center pb-32px text-danger">(Şəxsi kabinetə daxil olmaq üçün e-poçtunuzu yoxlayın)</p>
+      <a [routerLink]="['/auth/login']"
+         class="btn btn-brand7 w100">{{"global.signin" | translate}}</a>
+    </div>
+  </div>
+  <div class="center"
+       *ngIf="success_type == 'email'">
+    <div class="display-flex align-items-center justify-content-center flex-direction-column">
+      <i class="mdi mdi-check"></i>
+      <p class="p i-medium text-center pb-32px">{{"global.recover-pass-link" | translate}}</p>
+      <a [routerLink]="['/auth/login']"
+         class="btn btn-brand7 w100"> {{"global.signin" | translate}}</a>
+    </div>
+  </div>
+  <div class="bottom"></div>
+</div>

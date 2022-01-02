@@ -1,0 +1,33 @@
+<div class="website-header-holder">
+  <div class="wrapper">
+    <website-header></website-header>
+  </div>
+</div>
+<section class="auth-layout">
+  <div class="bg-image">
+    <img
+         [src]="current_auth_setting && current_auth_setting.image ? current_auth_setting.image : '/assets/images/ilustrations/auth-bg.svg'">
+  </div>
+  <div class="auth-wrapper">
+    <div class="left">
+      <div>
+        <a [routerLink]="['/']"
+           class="brand">
+          <img src="/assets/images/idealizerr_logo.svg"
+               class="object-fit-contain">
+        </a>
+      </div>
+      <div class="pt-24px">
+        <h1 class="h1 i-semi-bold"
+            *ngIf="current_auth_setting && current_auth_setting.title">{{current_auth_setting.title}}</h1>
+        <h4 class="h4 i-regular pt-8px w60 lh-28px"
+            *ngIf="current_auth_setting && current_auth_setting.description">{{current_auth_setting.description}}</h4>
+      </div>
+    </div>
+    <div class="right">
+      <div class="router-holder">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</section>

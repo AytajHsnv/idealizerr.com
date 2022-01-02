@@ -1,0 +1,122 @@
+@import "src/assets/scss/abstracts/variables";
+
+// 563
+.plan {
+  flex: 1 1 0px;
+
+  .icon-holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      border: 1px solid $input;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @media (max-width: 563px) {
+        width: 25px;
+        height: 25px;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        object-fit: contain;
+      }
+    }
+
+    .line {
+      border-bottom: 1px solid $brand3;
+      flex-grow: 1;
+      width: 20px;
+
+      @media (max-width: 563px) {
+        width: 10px;
+      }
+
+    }
+  }
+
+  .safehtml {
+    height: 114px;
+    overflow: hidden;
+    padding: 8px 16px;
+
+    >* {
+      text-align: center;
+    }
+  }
+
+  &.passed {
+    .icon-holder {
+      .icon {
+        background-color: $input;
+      }
+    }
+  }
+
+  &.active {
+    .icon-holder {
+      .icon {
+        background-color: #fff;
+        box-shadow: 0 0 0 0 rgba(59, 69, 192, 0.8);
+        animation: pulse 2s infinite;
+      }
+    }
+  }
+}
+
+.pulse {
+  margin: 100px;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgb(204, 169, 44);
+  cursor: pointer;
+
+}
+
+.pulse:hover {
+  animation: none;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(59, 69, 192, 0.8);
+  }
+
+  70% {
+    -webkit-box-shadow: 0 0 0 14px rgba(59, 69, 192, 0);
+  }
+
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(59, 69, 192, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(59, 69, 192, 0.8);
+    box-shadow: 0 0 0 0 rgba(59, 69, 192, 0.8);
+  }
+
+  70% {
+    -moz-box-shadow: 0 0 0 14px rgba(59, 69, 192, 0);
+    box-shadow: 0 0 0 14px rgba(59, 69, 192, 0);
+  }
+
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(59, 69, 192, 0);
+    box-shadow: 0 0 0 0 rgba(59, 69, 192, 0);
+  }
+}
+
+.text-size {
+  font-size: 11px;
+}

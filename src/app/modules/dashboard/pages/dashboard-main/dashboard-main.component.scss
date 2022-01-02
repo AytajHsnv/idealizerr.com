@@ -1,0 +1,23 @@
+.wrapper-main {
+  box-shadow: 4px 4px 13px 0 rgba(0, 28, 50, 0.07);
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  padding: 48px;
+  padding-bottom: 64px;
+  position: relative;
+
+  @media (max-width: 1250px) {
+    padding: 30px;
+  }
+
+  @media (max-width: 1031px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+}
+@media (max-width: 991px) {
+  .right-side {
+    margin-top: 30px;
+  }
+}

@@ -1,0 +1,188 @@
+<div class="box">
+  <form [formGroup]="questionForm"
+        *ngIf="questionForm">
+    <div class="input-holder pb-24px">
+      <label for="title">{{"dashboard.project-name" | translate}}</label>
+      <div class="input">
+        <input type='text'
+               name='title'
+               (keyup)="startupNameChange.emit({
+                 key: 'title',
+                 value: $event.target.value
+               })"
+               placeholder=''
+               formControlName='title'
+               id='title'>
+      </div>
+      <ul>
+        <li *ngIf="questionForm.controls['title'].hasError('required') && questionForm.controls['title'].touched">
+          {{"global.requiredField" | translate}}</li>
+      </ul>
+    </div>
+    <div class="input-holder pb-24px">
+      <label for="description">{{"dashboard.projects-solution" | translate}}</label>
+      <div class="input">
+        <textarea name='description'
+                  placeholder=''
+                  (keyup)="startupNameChange.emit({
+                    key: 'description',
+                    value: $event.target.value
+                  })"
+                  formControlName='description'
+                  id='description'>
+        </textarea>
+      </div>
+      <ul>
+        <li
+            *ngIf="questionForm.controls['description'].hasError('required') && questionForm.controls['description'].touched">
+          {{"global.requiredField" | translate}}</li>
+      </ul>
+    </div>
+    <div class="input-holder pb-24px">
+      <label for="website">{{"dashboard.projects-webpage" | translate}}</label>
+      <div class="input">
+        <input type='text'
+               name='website'
+               placeholder=''
+               formControlName='website'
+               id='website'>
+      </div>
+      <ul>
+        <li *ngIf="questionForm.controls['website'].hasError('required') && questionForm.controls['website'].touched">
+          {{"global.requiredField" | translate}}</li>
+      </ul>
+    </div>
+    <div class="input-holder pb-24px">
+      <label for="twitter">Twitter</label>
+      <div class="input">
+        <input type='text'
+               name='twitter'
+               placeholder=''
+               formControlName='twitter'
+               id='twitter'>
+      </div>
+      <ul>
+        <li *ngIf="questionForm.controls['twitter'].hasError('required') && questionForm.controls['twitter'].touched">
+          {{"global.requiredField" | translate}}</li>
+      </ul>
+    </div>
+    <div class="input-holder pb-24px">
+      <label for="facebook">Facebook</label>
+      <div class="input">
+        <input type='text'
+               name='facebook'
+               placeholder=''
+               formControlName='facebook'
+               id='facebook'>
+      </div>
+      <ul>
+        <li *ngIf="questionForm.controls['facebook'].hasError('required') && questionForm.controls['facebook'].touched">
+          {{"global.requiredField" | translate}}</li>
+      </ul>
+    </div>
+    <div class="input-holder pb-24px">
+      <label for="team">{{"dashboard.team-info" | translate}}</label>
+      <div class="input">
+        <textarea name='team'
+                  placeholder=''
+                  formControlName='team'
+                  id='team'>
+        </textarea>
+      </div>
+      <ul>
+        <li *ngIf="questionForm.controls['team'].hasError('required') && questionForm.controls['team'].touched">
+          {{"global.requiredField" | translate}}</li>
+      </ul>
+    </div>
+    <div class="input-holder pb-24px">
+      <label for="idea">{{"dashboard.projects-solution-explanation" | translate}}</label>
+      <div class="input">
+        <textarea name='idea'
+                  placeholder=''
+                  formControlName='idea'
+                  id='idea'>
+        </textarea>
+      </div>
+      <ul>
+        <li *ngIf="questionForm.controls['idea'].hasError('required') && questionForm.controls['idea'].touched">
+          {{"global.requiredField" | translate}}</li>
+      </ul>
+    </div>
+    <div class="input-holder pb-24px">
+      <label for="idea">{{"home.select-your-country" | translate}}</label>
+      <div class="input">
+        <ngx-ea-intl-tel-input
+              [value]="questionForm ? questionForm.get('answer1').value : null"
+              [hideCountriesDialCodeList]="[]"
+              [placeholder]="'global.yournumber' | translate"
+              [formVersion]="true"
+              [label]="false"
+              [disabled]="answer1Disabled"
+              [countries]="countries"
+              [searchPlaceholder]="'home.search' | translate"
+              [choose]="'home.select-country' | translate"
+              (value)="mobileNumberInputChange($event)"></ngx-ea-intl-tel-input>
+      </div>
+      <ul>
+       <li *ngIf="questionForm.controls['answer1'].hasError('required') && questionForm.controls['answer1'].touched">
+        {{"global.requiredField" | translate}}</li>
+      </ul>
+    </div>
+    <ng-container *ngFor="let item of questions | keyvalue">
+      <ng-container *ngIf="item.value.checkbox; then checkbox; else radio">
+      </ng-container>
+      <ng-template #checkbox>
+        <div class="input-holder pb-24px"
+             [formArrayName]="item.key">
+          <label>{{item.value.question}}</label>
+          <ng-container *ngFor="let key of item.value.options; let i = index">
+            <div class="radio">
+              <input type="checkbox"
+                     [formControlName]="i"
+                     id="checkbox-{{item.key}}-{{key.id}}">
+              <label class="radio-label black"
+                     for="checkbox-{{item.key}}-{{key.id}}">{{key.value}}</label>
+            </div>
+          </ng-container>
+          <ul>
+            <li *ngIf="questionForm.controls[item.key].touched && questionForm.controls[item.key].invalid">
+              {{"global.requiredField" | translate}}
+            </li>
+          </ul>
+        </div>
+      </ng-template>
+      <ng-template #radio>
+        <div class="input-holder pb-24px">
+          <label>{{item.value.question}}</label>
+          <ng-container *ngFor="let key of item.value.options; let i = index">
+            <div class="radio">
+              <input name="{{item.key}}"
+                     type="radio"
+                     value="{{key.value}}"
+                     [formControlName]="item.key"
+                     id="radio-{{item.key}}-{{key.id}}">
+              <label class="radio-label black"
+                     for="radio-{{item.key}}-{{key.id}}">{{key.value}}</label>
+            </div>
+          </ng-container>
+          <ul>
+            <li *ngIf="questionForm.controls[item.key].hasError('required') && questionForm.controls[item.key].touched">
+              {{"global.requiredField" | translate}}
+            </li>
+          </ul>
+        </div>
+      </ng-template>
+    </ng-container>
+  </form>
+
+  <div class="input-holder pt-24px pb-24px" *ngIf="new && questionForm">
+    <ul>
+      <li *ngIf="allTouched && !questionForm.valid">
+        {{"dashboard.image-or-other-required-fields-empty" | translate}}
+      </li>
+    </ul>
+  </div>
+  <button (click)="submitForm()"
+     *ngIf="new"
+     class="dashboard-form-submit-btn">{{"dashboard.save" | translate}}</button>
+</div>

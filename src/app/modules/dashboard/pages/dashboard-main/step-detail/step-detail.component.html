@@ -1,0 +1,19 @@
+<div class="wrapper-main">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="safehtml">
+        <div [innerHTML]="detail.action_description | safehtml"></div>
+      </div>
+    </div>
+    <div class="col-lg-6" *ngIf="detail.action_video && detail.action_video !== '#'">
+      <section class="youtube-embed-player">
+        <div class="holder">
+          <iframe style="width: 100%" height="315" [src]="safeYoutube" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+    </div>
+    <div class="col-lg-6" *ngIf="!(detail.action_video && detail.action_video !== '#')">
+      <button>Click</button>
+    </div>
+  </div>
+</div>

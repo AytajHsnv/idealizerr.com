@@ -1,0 +1,41 @@
+<section class="core-main-startups">
+  <div class="text-center pb-3">
+    <h1 class="h1 i-semi-bold pb-3">{{"home.explore" | translate}}</h1>
+    <p class="p i-medium">{{"home.explore-motivation" | translate}}</p>
+  </div>
+  <div class="startups-filter mb-32px">
+    <div>
+      <ul class="display-flex">
+        <li>
+          <a (click)="filter('liked')"
+             [ngClass]="{'active': selected_filter == 'liked'}">{{"home.liked-startups" | translate}}</a>
+        </li>
+        <li>
+          <a (click)="filter('new')"
+             [ngClass]="{'active': selected_filter == 'new'}">{{"home.new-startups" | translate}}</a>
+        </li>
+        <!-- <li>
+          <a (click)="filter('soon')" [ngClass]="{'active': selected_filter == 'soon'}">Tezliklə</a>
+        </li> -->
+      </ul>
+    </div>
+  </div>
+  <div class="startups">
+    <div>
+      <div class="row">
+        <div class="col-md-4 col-12"
+             *ngFor="let item of startups[selected_filter] |slice:0:9">
+          <div class="startup-holder pb-32px h-100">
+            <startup-card-home [startup]=item>
+            </startup-card-home>
+          </div>
+        </div>
+      </div>
+      <div class="view-all-btn display-flex justify-content-flex-end">
+        <a [routerLink]="['/startups']"
+           class="btn btn-brand7">{{"home.all" | translate}}</a>
+      </div>
+    </div>
+  </div>
+
+</section>

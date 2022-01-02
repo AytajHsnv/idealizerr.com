@@ -1,0 +1,13 @@
+<div class="box">
+  <div class="row"
+       *ngIf="programs">
+    <div class="col-md-4 mb-2 i-medium"
+         *ngFor="let item of programs">
+      <div class="program-content"
+           (click)="joinProgram(item)">
+        <div class="title">{{item.title}}</div>
+        <div class="description">{{item.description}}</div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+@import "src/assets/scss/abstracts/variables";
+
+nav {
+  margin-right: -16px;
+  margin-left: -16px;
+
+  .category {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
+.category {
+  @media (max-width: 991px) {
+    text-align: center;
+  }
+}
+
+ul {
+  margin-top: -8px;
+  margin-bottom: -8px;
+
+  li {
+    a {
+      padding-top: 8px;
+      padding-bottom: 8px;
+      display: block;
+
+      &.router-link-active {
+        color: $black;
+      }
+    }
+    p{
+      line-height: 1.5;
+    }
+  }
+}

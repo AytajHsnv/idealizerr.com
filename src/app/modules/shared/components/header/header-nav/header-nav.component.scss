@@ -1,0 +1,45 @@
+@import 'src/assets/scss/abstracts/variables';
+
+.header-nav {
+    @media(max-width: 918px) {
+        padding: 0;
+
+        ul {
+            display: block;
+            margin-top: 20px;
+
+            li {
+                a {
+                    font-size: 18px;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}
+
+nav {
+    ul {
+        li {
+            a {
+                padding: 16px 8px;
+                transition: $transition-2;
+                color: $brand7;
+                margin-top: -3px;
+                border-bottom: 3px solid $transparent;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+
+                &.router-link-active {
+                    border-bottom: 3px solid $brand7;
+                }
+
+                @media (max-width: 1036px) {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

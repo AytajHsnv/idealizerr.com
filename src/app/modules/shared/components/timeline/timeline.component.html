@@ -1,0 +1,16 @@
+<section class="core-competition-plans">
+  <div class="display-flex">
+    <div class="plan"
+         *ngFor="let item of plans"
+         [ngClass]="{'passed': item.status == '0','active': item.status == '1'}">
+      <div class="icon-holder">
+        <div class="line"></div>
+        <div class="icon">
+          <img [src]="item.action_icon">
+        </div>
+        <div class="line"></div>
+      </div>
+      <h4 class="text-size i-medium text-center mt-2">{{item.action_title}}</h4>
+    </div>
+  </div>
+</section>

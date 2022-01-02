@@ -1,0 +1,29 @@
+<section>
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <div *ngIf="user"
+                     class="pb-32px">
+                    <dashboard-settings-profile-information [user]="user"></dashboard-settings-profile-information>
+                </div>
+                <div class="pb-32px">
+                    <dashboard-settings-profile-mobile-number-form [user]="user">
+                    </dashboard-settings-profile-mobile-number-form>
+                </div>
+                <div class="pb-32px">
+                    <dashboard-settings-profile-email-form [user]="user"></dashboard-settings-profile-email-form>
+                </div>
+            </div>
+            <div class="col-md-6 col-12">
+                <div class="pb-32px">
+                    <dashbaord-settings-profile-information-form [user]="user">
+                    </dashbaord-settings-profile-information-form>
+                </div>
+                <div class="pb-32px">
+                    <dashboard-settings-profile-password-form [user]="user"></dashboard-settings-profile-password-form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,58 @@
+@import 'src/assets/scss/abstracts/variables';
+
+.linear-notification {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    max-height: 0px;
+    transition: 0.2s linear;
+    width: 630px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding-top: 24px;
+    transform: translateX(-50%);
+
+    @media (max-width: 768px) {
+        width: 90%;
+    }
+
+    .notification {
+        margin-bottom: 12px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0px 18px;
+        border-radius: $br4;
+        min-height: 48px;
+        background-color: $brand7;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        i {
+            font-size: 18px;
+            color: $white;
+        }
+
+        p {
+            padding-left: 14px;
+        }
+
+        &.success {
+            background-color: $success;
+        }
+
+        &.danger {
+            background-color: $danger !important;
+        }
+
+        &.warning {
+            background-color: $warning !important;
+        }
+
+        &.active {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

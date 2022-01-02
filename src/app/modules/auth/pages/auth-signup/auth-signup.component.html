@@ -1,0 +1,228 @@
+<div class="auth-signup-holder">
+  <div class="top">
+    <h2 class="h2 i-medium pb-8px">{{"global.noaccsignup" | translate}}</h2>
+    <p class="p i-light">{{"global.haveaccount" | translate}} <a [routerLink]="['/auth/login']"
+         class="link i-semi-bold">{{"global.signin" | translate}}</a></p>
+  </div>
+  <div class="center">
+    <div class="pt-40px">
+      <social-login></social-login>
+    </div>
+    <div>
+      <!-- <or-holder></or-holder> -->
+    </div>
+
+
+    <div class="pb-40px">
+      <form [formGroup]='form'
+            autocomplete='on'
+            validate
+            (keyup.enter)='submitForm()'>
+
+        <!-- 1 -->
+        <div class="row">
+          <div class="col-md-6 col-12">
+            <!-- COMMENT ================================================================================ -->
+            <div class="input-holder pb-24px">
+              <label for="name">{{"global.name" | translate}}</label>
+              <div class="input">
+                <input type='text'
+                       name='name'
+                       placeholder='{{"global.yourname" | translate}}'
+                       formControlName='name'
+                       id='name'>
+              </div>
+              <ul>
+                <li *ngIf="form.controls['name'].hasError('required') && form.controls['name'].touched">
+                  {{"global.requiredField" | translate}}
+                </li>
+              </ul>
+            </div>
+            <!-- ================================================================================ COMMENT -->
+          </div>
+          <div class="col-md-6 col-12">
+            <!-- COMMENT ================================================================================ -->
+            <div class="input-holder pb-24px">
+              <label for="surname">{{"global.lastname" | translate}}</label>
+              <div class="input">
+                <input type='text'
+                       name='surname'
+                       placeholder='{{"global.yourlastname" | translate}}'
+                       formControlName='surname'
+                       id='surname'>
+              </div>
+              <ul>
+                <li *ngIf="form.controls['surname'].hasError('required') && form.controls['surname'].touched">
+                  {{"global.requiredField" | translate}}</li>
+              </ul>
+            </div>
+            <!-- ================================================================================ COMMENT -->
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="row">
+          <div class="col-12">
+            <!-- COMMENT ================================================================================ -->
+            <div class="input-holder pb-24px">
+              <label for="email">{{"global.email" | translate}}</label>
+              <div class="input right-icon">
+                <input type='email'
+                       name='email'
+                       placeholder='{{"global.your-email" | translate}}'
+                       formControlName='email'
+                       id='email'>
+              </div>
+              <ul>
+                <li *ngIf="form.controls['email'].hasError('email') && form.controls['email'].touched">
+                  {{"global.correct-email" | translate}}</li>
+                <li *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">
+                  {{"global.requiredField" | translate}}</li>
+              </ul>
+            </div>
+            <!-- ================================================================================ COMMENT -->
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="row">
+          <div class="col-12">
+            <!-- COMMENT ================================================================================ -->
+            <!-- <div class="holder">
+              <ngx-ea-intl-tel-input [hideCountriesDialCodeList]="[AZ,EN]" [numberPlaceholder]="'Mobil nömrəniz'" [searchPlaceholder]="'Axtarış'"></ngx-ea-intl-tel-input>
+            </div> -->
+
+            <div class="input-holder pb-24px">
+              <label for="phone_number">{{"global.phone" | translate}}</label>
+              <div class="input right-icon">
+                <ngx-ea-intl-tel-input
+                                       [value]="''"
+                                       [signUpVersion]="true"
+                                       [hideCountriesDialCodeList]="[]"
+                                       [placeholder]="'global.yournumber' | translate"
+                                       [searchPlaceholder]="'home.search' | translate"
+                                       (value)="mobileNumberInputChange($event)"></ngx-ea-intl-tel-input>
+                <!-- <input type='text'
+                       name='phone_number'
+                       placeholder='{{"global.yourphone" | translate}}'
+                       formControlName='phone_number'
+                       id='phone_number'> -->
+              </div>
+              <ul>
+                <li *ngIf="form.controls['phone_number'].hasError('required') && form.controls['phone_number'].touched">
+                  {{"global.requiredField" | translate}}</li>
+              </ul>
+            </div>
+            <!-- ================================================================================ COMMENT -->
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="row">
+          <div class="col-12">
+            <!-- COMMENT ================================================================================ -->
+            <div class="input-holder pb-32px">
+              <label for="password">{{"global.password" | translate}}</label>
+              <div class="input password">
+                <input [type]='password_visible ? "text" : "password"'
+                       name='password'
+                       placeholder='{{"global.password-placeholder" | translate}}'
+                       formControlName='password'
+                       id='password'>
+                <i class="mdi mdi-eye"
+                   *ngIf="!password_visible"
+                   (click)="togglePasswordVisible()"></i>
+                <i class="mdi mdi-eye-off"
+                   *ngIf="password_visible"
+                   (click)="togglePasswordVisible()"></i>
+              </div>
+              <ul>
+                <li *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">
+                  {{"global.requiredField" | translate}}</li>
+                <li *ngIf="form.controls['password'].hasError('minlength') && form.controls['password'].touched">
+                  {{"global.requiredSymbol" | translate:{'val': 6} }}</li>
+              </ul>
+            </div>
+            <!-- ================================================================================ COMMENT -->
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <!-- COMMENT ================================================================================ -->
+            <div class="input-holder pb-32px">
+              <label for="password">{{"global.password-conf" | translate}}</label>
+              <div class="input password">
+                <input [type]='password_visible ? "text" : "password"'
+                       name='password'
+                      placeholder='{{"global.password-conf-placeholder" | translate}}'
+                       formControlName='password-confirm'
+                       id='password-confirm'>
+                <i class="mdi mdi-eye"
+                   *ngIf="!password_visible"
+                   (click)="togglePasswordVisible()"></i>
+                <i class="mdi mdi-eye-off"
+                   *ngIf="password_visible"
+                   (click)="togglePasswordVisible()"></i>
+              </div>
+              <ul>
+                <li *ngIf="form.controls['password-confirm'].hasError('required') && form.controls['password-confirm'].touched">
+                  {{"global.requiredField" | translate}}</li>
+                <li *ngIf="form.controls['password-confirm'].hasError('minlength') && form.controls['password-confirm'].touched">
+                  {{"global.requiredSymbol" | translate:{'val': 6} }}</li>
+                  <li *ngIf="form && form.hasError('invalid') && (form.controls['password-confirm'].touched || form.controls['password'].touched)">
+                    {{"global.confirm-password-required" | translate}}</li>
+              </ul>
+            </div>
+            <!-- ================================================================================ COMMENT -->
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <!-- <div class="row">
+          <div class="col-12">
+            <div class="display-flex pb-8px">
+              <label class="checkbox" for="current_competition">
+                <p class="label i-regular">Cari müsabiqədə iştirak etmək istəyirəm </p>
+                <input type="checkbox" formControlName='current_competition' name="current_competition" id="current_competition">
+                <span class="checkmark"></span>
+              </label>
+              <div class="pl-8px"><i class="mdi mdi-information fs-20px brand7"></i></div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- 6 -->
+        <div class="row">
+          <div class="col-12">
+            <div class="display-flex align-items-center pb-32px">
+              <label class="checkbox"
+                     for="terms_accepted">
+                <input type="checkbox"
+                       formControlName='terms_accepted'
+                       name="terms_accepted"
+                       id="terms_accepted">
+                <span class="checkmark"></span>
+              </label>
+              <div class="pl-8px">
+                <p class="label i-regular"><a (click)="openTermsModal()"
+                     class="link i-semi-bold">{{"global.terms" | translate}}</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn btn-brand7 w100"
+                  [disabled]="!form.valid"
+                  (click)="submitForm()">{{"global.signup" | translate}}</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="bottom"></div>
+</div>
+
+<terms-modal *ngIf="terms_display"
+             (accept)="acceptTerms()"
+             (close)="closeTermsModal()"></terms-modal>

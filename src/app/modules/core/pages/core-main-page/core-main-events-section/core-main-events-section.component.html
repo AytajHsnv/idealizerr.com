@@ -1,0 +1,15 @@
+<section class="core-main-events-section">
+  <div class="row">
+    <div class="col-md-4 col-12" *ngFor="let event of events | slice:0:3">
+      <a class="event display-flex align-items-center">
+        <div class="image">
+          <img src="{{event.image}}">
+        </div>
+        <div class="pl-8px">
+          <h5 class="h5 i-regular pb-8px" [innerHTML]="event.title"></h5>
+          <p class="small i-light grey">{{event.date}}</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

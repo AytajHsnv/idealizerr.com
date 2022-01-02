@@ -1,0 +1,107 @@
+<div class="whitebox">
+  <h4 class="h4 i-semi-bold grey pb-40px">{{"dashboard.profile-info" | translate}}</h4>
+
+
+  <div>
+    <form [formGroup]='form'
+          autocomplete='on'
+          validate
+          (keyup.enter)='submitForm()'>
+
+
+      <!-- NAME ================================================================================ -->
+      <div class="row">
+        <div class="col-12">
+          <div class="input-holder pb-24px">
+            <label for="name">{{"global.name" | translate}}</label>
+            <div class="input">
+              <input type='text'
+                     name='name'
+                     placeholder='{{"global.yourname" | translate}}'
+                     formControlName='name'
+                     id='name'>
+            </div>
+            <ul>
+              <li *ngIf="form.controls['name'].hasError('required') && form.controls['name'].touched">
+                {{"global.requiredField" | translate}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ================================================================================ COMMENT -->
+
+
+      <!-- COMMENT ================================================================================ -->
+      <!-- 1 -->
+      <div class="row">
+        <div class="col-12">
+          <div class="input-holder pb-24px">
+            <label for="surname">{{"global.lastname" | translate}}</label>
+            <div class="input">
+              <input type='text'
+                     name='surname'
+                     placeholder='{{"global.yourlastname" | translate}}'
+                     formControlName='surname'
+                     id='surname'>
+            </div>
+            <ul>
+              <li *ngIf="form.controls['surname'].hasError('required') && form.controls['surname'].touched">
+                {{"global.requiredField" | translate}}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- ================================================================================ COMMENT -->
+
+
+      <!-- COMMENT ================================================================================ -->
+      <div class="row">
+        <div class="col-12">
+          <div class="select-holder pb-32px">
+            <ui-select label="{{'dashboard.sex' | translate}}"
+                       placeholder="{{'dashboard.select-sex' | translate}}"
+                       [options]="gender_options"
+                       [selected]="user_gender_option"
+                       (value)="genderSelectChange($event)"></ui-select>
+            <input type='text'
+                   name='gender'
+                   formControlName='gender'
+                   id='gender'
+                   class="display-none">
+          </div>
+        </div>
+      </div>
+      <!-- ================================================================================ COMMENT -->
+
+
+
+      <!-- COMMENT ================================================================================ -->
+      <div class="row">
+        <div class="col-12">
+          <div class="datepicker-holder">
+            <ui-datepicker name="birthday"
+                           label="{{'dashboard.birthday' | translate}}"
+                           [value]="user_birthday"
+                           [end]="datepicker_end_date"
+                           (value)="datepickerValueChange($event)"></ui-datepicker>
+            <input type='text'
+                   name='birthday'
+                   formControlName='birthday'
+                   id='birthday'
+                   class="display-none">
+          </div>
+        </div>
+      </div>
+      <!-- ================================================================================ COMMENT -->
+
+
+    </form>
+  </div>
+
+
+  <a (click)="submitForm()"
+     *ngIf="form_value_changed"
+     class="dashboard-form-submit-btn">{{"global.refresh" | translate}}</a>
+</div>

@@ -1,0 +1,68 @@
+@import "../abstracts/variables";
+
+.datepicker--cell-day {
+  font-family: $i_regular !important;
+  color: $grey !important;
+  font-size: 12px !important;
+  line-height: 24px !important;
+}
+i.datepicker--pointer {
+  display: none !important;
+}
+.datepicker,
+.datepicker.active {
+  margin-top: -11px;
+  box-shadow: $box-shadow-5 !important;
+  padding: 5px 50px !important;
+  border: 3px solid $brand0 !important;
+  border-radius: $br8 !important;
+}
+.datepicker--nav-title i,
+.datepicker--nav-title {
+  font-family: $i_semi_bold !important;
+  color: $black !important;
+  font-size: 14px !important;
+  line-height: 24px !important;
+}
+.datepicker--nav-action path {
+  stroke: $brand7 !important;
+}
+.datepicker--cell-year,
+.datepicker--cell-month,
+.datepicker--day-name {
+  font-family: $i_semi_bold !important;
+  color: $black !important;
+  font-size: 12px !important;
+  line-height: 24px !important;
+}
+.datepicker--cell.-selected- {
+  background-color: $brand7 !important;
+  color: $white !important;
+}
+.datepicker--cell.-focus- {
+  background-color: $brand1 !important;
+  color: $brand7 !important;
+}
+.datepicker--button {
+  font-family: $i_semi_bold !important;
+  color: $brand7 !important;
+  font-size: 14px !important;
+  line-height: 24px !important;
+  &:hover {
+    background: $brand1 !important;
+  }
+}
+
+.datepicker--cell.-disabled- {
+  color: $grey !important;
+  &:hover {
+    background: transparent !important;
+  }
+}
+
+.singlepicker.datepicker,
+.singlepicker.datepicker.active {
+  margin-left: 44px !important;
+  margin-top: -18px !important;
+  padding: 5px 30px !important;
+}

@@ -1,0 +1,39 @@
+  <div class="wrapper-main"
+       *ngIf="!pageProps.juri_voice_gived && pageProps.juri_voice_giving">
+      <h2 class="i-regular h4 mb-5"><span class="i-bold">{{"dashboard.voice-jury" | translate}}</span></h2>
+    <div class="row">
+      <div class="col-md-4"
+           *ngFor="let item of members; let i = index">
+        <div class="startup-holder pb-32px"
+             style="height: 100%">
+          <startup-card-voice [startup]=item
+                              [index]="i"
+                              (voiceGive)="giveVoice($event)"
+                              [jury]="true">
+          </startup-card-voice>
+        </div>
+      </div>
+    </div>
+      <div class="row justify-content-center"
+           *ngIf="voices.length === members.length">
+        <button class="btn btn-success"
+                (click)="finishVoice()">{{"dashboard.voice-end" | translate}}</button>
+      </div>
+  </div>
+  <div class="wrapper-main"
+       *ngIf="pageProps.juri_voice_gived">
+    <h2 class="i-regular h4 mb-5"><span class="i-bold">{{"dashboard.voice-summary" | translate}}</span></h2>
+    <div class="row">
+      <div class="col-md-4"
+           *ngFor="let item of members; let i = index">
+        <div class="startup-holder pb-32px"
+             style="height: 100%">
+          <startup-card-voice [startup]=item
+                              [index]="i"
+                              [rate]="false"
+                              (voiceGive)="giveVoice($event)">
+          </startup-card-voice>
+        </div>
+      </div>
+    </div>
+  </div>

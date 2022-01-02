@@ -1,0 +1,49 @@
+<section class="core-about-main">
+  <div *ngIf="about">
+    <!-- IDEA -->
+    <div *ngIf="about.about_content" class="item" scroll-id="ideas">
+      <div class="row">
+        <div class="col-md-5 col-12">
+          <div class="image">
+            <img [src]="about.about_content[0].image">
+          </div>
+        </div>
+        <div class="col-md-7 col-12">
+          <h1 class="h1 i-semi-bold pb-24px">{{about.about_content[0].title}}</h1>
+          <h4 class="h4 i-regular lh-28px">{{about.about_content[0].description}}</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="item" scroll-id="progress">
+      <div class="row">
+        <div class="col-md-5 col-12">
+          <div class="image">
+            <img [src]="about.about_content[1].image">
+          </div>
+        </div>
+        <div class="col-md-7 col-12">
+          <h1 class="h1 i-semi-bold pb-24px">{{about.about_content[1].title}}</h1>
+          <h4 class="h4 i-regular lh-28px">{{about.about_content[1].description}}</h4>
+        </div>
+      </div>
+    </div>
+
+    <!-- PROGRESS -->
+    <div class="item" scroll-id="result">
+      <div class="row">
+        <div class="col-md-5 col-12">
+          <div class="image">
+            <img [src]="about.about_content[2].image">
+          </div>
+        </div>
+        <div class="col-md-7 col-12">
+          <h1 class="h1 i-semi-bold pb-24px">{{about.about_content[2].title}}</h1>
+          <h4 class="h4 i-regular lh-28px">{{about.about_content[2].description}}</h4>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

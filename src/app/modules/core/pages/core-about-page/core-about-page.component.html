@@ -1,0 +1,35 @@
+<section class="core-about-page">
+
+  <div class="video-player-holder">
+    <div class="wrapper">
+      <video-player *ngIf="youtube_video_id" [video_id]="youtube_video_id"></video-player>
+    </div>
+  </div>
+
+
+  <div class="page-inside-navigation-holder">
+    <div class="wrapper">
+      <page-inside-navigation [sections]="navigation_sections"></page-inside-navigation>
+    </div>
+  </div>
+
+
+  <div class="core-about-main-section-holder section-space" scroll-id="main">
+    <div class="wrapper">
+      <core-about-main-section [about]="about"></core-about-main-section>
+    </div>
+  </div>
+
+  <div class="core-about-sponsors-slider-holder section-space bg-brand0" scroll-id="sponsors">
+    <div class="wrapper">
+      <core-about-sponsors-slider></core-about-sponsors-slider>
+    </div>
+  </div>
+
+  <div class="core-about-team-section-holder section-space" scroll-id="team">
+    <div class="wrapper">
+      <core-about-team-section></core-about-team-section>
+    </div>
+  </div>
+
+</section>

@@ -1,0 +1,8 @@
+<section class="page-inside-navigation border-bottom">
+    <ul class="display-flex justify-content-center align-items-center ">
+      <li *ngFor="let section of sections">
+        <a (click)="scrollToSection(section.section_id)" [attr.scroll-target]="section.section_id">{{section.title}}</a>
+      </li>
+    </ul>
+</section>
+<section class="page-inside-navigation-replace"></section>

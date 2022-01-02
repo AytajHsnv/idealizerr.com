@@ -1,0 +1,17 @@
+<section class="core-competition-plans">
+  <h1 class="h1 i-semi-bold pb-24px">{{"home.actionplan" | translate}}</h1>
+  <div class="plan-container">
+    <div class="plan"
+         *ngFor="let item of plans"
+         [ngClass]="{'passed': item.status == '0','active': item.status == '1'}">
+      <div class="icon-holder pt-24px">
+        <div class="line"></div>
+        <div class="icon">
+          <img [src]="item.action_icon">
+        </div>
+        <div class="line"></div>
+      </div>
+      <h4 class="h4 i-medium text-center pr-24px pl-24px pt-24px">{{item.action_key | translate}}</h4>
+    </div>
+  </div>
+</section>

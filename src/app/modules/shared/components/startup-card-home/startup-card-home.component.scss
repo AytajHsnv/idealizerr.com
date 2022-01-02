@@ -1,0 +1,158 @@
+@import 'src/assets/scss/abstracts/variables';
+
+.startup-card {
+    border-radius: $br8;
+    border: $border3;
+    overflow: hidden;
+    position: relative;
+    transition: $transition-2;
+    height: 100%;
+
+    &.bg-white {
+        background-color: $white;
+    }
+
+    &:hover {
+        box-shadow: $box-shadow-3;
+    }
+
+    .cover {
+        width: 100%;
+        height: 170px;
+        border-bottom: $border3;
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        a {
+            display: inline;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .subscribe {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            width: 100px;
+            min-width: 100px;
+        }
+    }
+
+    .logo {
+        width: 100px;
+        height: 100px;
+        border: $border3;
+        border-radius: $br8;
+        position: absolute;
+        top: 116px;
+        right: 24px;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .information {
+        p.desc {
+            padding-left: 24px;
+            padding-right: 24px;
+            height: 80px;
+            overflow: hidden;
+        }
+
+        .country {
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-top: 8px;
+            display: flex;
+            align-items: center;
+
+            .flag {
+                width: 24px;
+                height: 24px;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        .rate {
+            padding-left: 24px;
+            padding-right: 24px;
+            cursor: pointer;
+
+            i {
+                font-size: 32px;
+                color: $brand3;
+            }
+
+            p {
+                text-align: right;
+                transition: $transition-2;
+            }
+
+
+        }
+
+        .ranks {
+            border-top: $border3;
+
+            .jury-vote,
+            .starup-vote,
+            .rank {
+                height: 100px;
+                flex: 1 1 0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                position: relative;
+
+                .badge {
+                    position: absolute;
+                    top: 0px;
+                    right: 3px;
+
+                    img {
+                        width: 32px;
+                        height: 32px;
+                        object-fit: contain;
+                    }
+                }
+            }
+
+            .starup-vote {
+                border-left: $border3;
+                border-right: $border3;
+            }
+        }
+    }
+}
+
+.admin-is-checking {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #dc3545;
+}

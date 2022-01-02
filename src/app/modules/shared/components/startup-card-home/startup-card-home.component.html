@@ -1,0 +1,46 @@
+<div class="startup-card">
+  <div class="cover">
+    <a [routerLink]="redirection">
+      <img *ngIf="startup.cover_image"
+           [src]="startup.cover_image" />
+    </a>
+    <a (click)="subscribe(startup.id)"
+       *ngIf="!startup.mystartup"
+       class="btn icon subscribe"
+       [class.btn-white]="!startup.followed"
+       [class.btn-brand0]="startup.followed"
+       style="user-select: none;">
+      <ng-container *ngIf="startup.followed">
+        <small>{{"home.following" | translate}}</small>
+      </ng-container>
+      <ng-container *ngIf="!startup.followed">
+        <i class="mdi mdi-plus"></i>
+        <small>{{"home.follow" | translate}}</small>
+      </ng-container>
+    </a>
+  </div>
+  <div class="logo bg-white">
+    <a [routerLink]="redirection"
+       style="height: 100%; width: 100%">
+      <img [src]="startup.image"
+           *ngIf="startup.image">
+    </a>
+  </div>
+  <div class="information">
+    <a [routerLink]="redirection" title="{{startup.title}}">
+      <h3 class="name h3 i-medium">
+        {{startup.title}}
+      </h3>
+    </a>
+    <p class="desc p i-light lh-20px">{{startup.description}}</p>
+    <div class="display-flex align-items-center justify-content-space-between pb-24px">
+      <div class="country">
+        <div class="flag"
+             *ngIf="startup.country.code">
+          <img src="https://www.countryflags.io/{{startup.country.code}}/flat/64.png">
+        </div>
+        <p class="small grey i-regular pl-8px">{{startup.country.name}}</p>
+      </div>
+    </div>
+  </div>
+</div>

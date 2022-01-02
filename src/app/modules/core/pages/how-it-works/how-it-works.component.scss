@@ -1,0 +1,28 @@
+@import 'src/assets/scss/abstracts/variables';
+
+section{
+    padding-top: 48px;
+}
+
+.item{
+    background-color: $brand0;
+    border-radius: $br8;
+    padding: 24px;
+    width: 100%;
+    margin-bottom: 32px;
+    .image{
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img{
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+    p{
+        min-height: 32px;
+        overflow: hidden;
+        text-align: center;
+    }
+}

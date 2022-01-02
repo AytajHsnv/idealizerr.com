@@ -1,0 +1,9 @@
+<section>
+  <div class="wrapper" *ngIf="news">
+    <h1 class="h1 i-regular pt-40px pb-32px">{{news.title}}</h1>
+    <div class="image pb-40px">
+      <img [src]="news.image" style="max-width: 400px;">
+    </div>
+    <div class="safehtml" [innerHTML]="news.description | safehtml"></div>
+  </div>
+</section>

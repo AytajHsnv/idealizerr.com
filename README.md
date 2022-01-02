@@ -1,12 +1,4 @@
-# Idealizerr
-* [Prod: project.com](https://project.com)
-* [Dev: beta.project.com](https://project.com)
-* [Invision](https://project.com)
-* [Sketch](https://project.com)
-* Version: [1.0.0](https://project.com)
-* Front-end dev:    [Emil Alisgandarov](https://project.com)(+994 70 750 00 52) (emilaliinfo@gmail.com)
-* Back-end dev:     [---](https://project.com)
-* Company:          [Company](https://project.com)
+
 
 # Used languages
 * HTML

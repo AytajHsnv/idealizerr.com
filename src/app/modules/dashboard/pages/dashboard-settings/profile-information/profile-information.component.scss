@@ -1,0 +1,33 @@
+@import 'src/assets/scss/abstracts/variables';
+
+.information{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.image{
+    position: relative;
+    img{
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+    label{
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        width:50px;
+        height: 50px;
+        background-color: $white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        i{
+            font-size: 24px;
+            color: $brand7;
+        }
+    }
+}

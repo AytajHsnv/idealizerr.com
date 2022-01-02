@@ -1,0 +1,78 @@
+<div class="auth-login-holder">
+  <div class="top">
+    <h2 class="h2 i-medium pb-8px">{{"global.signin" | translate}}</h2>
+    <p class="p i-light">{{"global.noaccount" | translate}} <a [routerLink]="['/auth/signup']"
+         class="link i-semi-bold">{{"global.noaccsignup" | translate}} </a></p>
+  </div>
+  <div class="center">
+    <!-- <div class="pt-40px">
+      <social-login></social-login>
+    </div> -->
+    <div>
+      <!-- <or-holder></or-holder> -->
+    </div>
+
+    <div class="pb-40px">
+      <form [formGroup]='form'
+            autocomplete='on'
+            validate
+            (keyup.enter)='submitForm()'>
+
+        <!-- COMMENT ================================================================================ -->
+        <div class="input-holder pb-24px">
+          <label for="email">{{"global.email-heading" | translate}}</label>
+          <div class="input">
+            <input type='text'
+                   name='email'
+                   placeholder='{{"global.email-placeholder" | translate}}'
+                   formControlName='email'
+                   id='email'>
+          </div>
+          <ul>
+            <li *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched">
+              {{"global.requiredField" | translate}}
+            </li>
+          </ul>
+        </div>
+        <!-- ================================================================================ COMMENT -->
+
+        <!-- COMMENT ================================================================================ -->
+        <div class="input-holder pb-32px">
+          <label for="password">{{"global.password" | translate}}</label>
+          <div class="input password">
+            <input [type]='password_visible ? "text" : "password"'
+                   name='password'
+                   placeholder='{{"global.password-placeholder" | translate}}'
+                   formControlName='password'
+                   id='password'>
+            <i class="mdi mdi-eye"
+               *ngIf="!password_visible"
+               (click)="togglePasswordVisible()"></i>
+            <i class="mdi mdi-eye-off"
+               *ngIf="password_visible"
+               (click)="togglePasswordVisible()"></i>
+          </div>
+          <div class="forgot-password pt-8px display-flex justify-content-flex-end">
+            <a [routerLink]="['/auth/recovery/email']"
+               class="link p i-medium">{{"global.forgot-password" | translate}}</a>
+          </div>
+          <ul>
+            <li *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched">
+              {{"global.requiredField" | translate}}</li>
+            <li *ngIf="form.controls['password'].hasError('minlength') && form.controls['password'].touched">
+              {{"global.requiredSymbol" | translate:{'val': 6} }}</li>
+          </ul>
+        </div>
+        <!-- ================================================================================ COMMENT -->
+
+        <div>
+          <button class="btn btn-brand7 w100"
+                  [disabled]="!form.valid"
+                  (click)="submitForm()">{{"global.signin" | translate}}</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+  <div class="bottom"></div>
+</div>
